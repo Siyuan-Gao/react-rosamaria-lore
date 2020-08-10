@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.1",
     "contentful": "^7.14.6",
     "next": "9.5.1",
     "react": "16.13.1",
@@ -17,6 +18,7 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.11.1"
+    "babel-plugin-styled-components": "^1.11.1",
+    "contentful-import": "^7.9.4"
   }
 }
