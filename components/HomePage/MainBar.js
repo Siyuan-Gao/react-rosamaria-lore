@@ -63,3 +63,4 @@ function MainBar(props) {
 }
 
 export default MainBar;
+export { DivMain };

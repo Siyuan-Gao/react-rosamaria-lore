@@ -31,13 +31,13 @@ function SidebarSocials({ children }) {
         <Widget id="socials-widget" className="widget">
             {children}
             <a>
-                <i class="fa fa-twitter"></i>
+                <i className="fa fa-twitter"></i>
             </a>
             <a>
-                <i class="fa fa-linkedin"></i>
+                <i className="fa fa-linkedin"></i>
             </a>
             <a>
-                <i class="fa fa-rss"></i>
+                <i className="fa fa-rss"></i>
             </a>
         </Widget>
     );
