@@ -42,7 +42,7 @@ export default function Home() {
                 <div>
                     {articles.map((post) => (
                         <div>
-                            <h3>{post.fields.title}</h3>
+                            <h1>{post.fields.title}</h1>
                             {/* <h5>{post.fields.author.fields.name}</h5> */}
                         </div>
                     ))}
