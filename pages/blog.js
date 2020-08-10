@@ -3,7 +3,9 @@ import Layout from "../Layout";
 export default function Blog() {
     return (
         <Layout>
-            <h1>BLOG</h1>
+            <main className="container">
+                <h1>Blog</h1>
+            </main>
         </Layout>
     );
 }

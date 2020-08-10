@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "../styles/globals.css";
 
 const theme = {

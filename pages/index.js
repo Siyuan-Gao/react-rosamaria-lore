@@ -6,6 +6,7 @@ import styled from "styled-components";
 // import client from "../utils/client";
 // importing layout
 import Layout from "../Layout";
+import Featured from "../components/HomePage/FeaturedArea";
 
 export default function Home() {
     const [isloading, setIsLoading] = useState(false);
@@ -38,6 +39,7 @@ export default function Home() {
             </Head>
 
             <main className="container">
+                <Featured />
                 <h1>Welcome to my site!</h1>
                 <p>Hello world</p>
                 <div>

@@ -3,7 +3,9 @@ import Layout from "../Layout";
 export default function Contact() {
     return (
         <Layout>
-            <h1>Contact</h1>
+            <main className="container">
+                <h1>Contact</h1>
+            </main>
         </Layout>
     );
 }

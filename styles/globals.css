@@ -138,6 +138,11 @@ i * {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.home #header {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
 #header {
     padding-top: 51px;
     margin-bottom: 60px;
