@@ -1,8 +1,9 @@
+import React, { useState } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 // local components
 import FeaturedItem from "./FeaturedItem";
-import data from "../../dummy/data.json";
+// import data from "../../dummy/data.json";
 
 const Featured = styled.div`
     margin-bottom: 60px;
@@ -28,9 +29,9 @@ export default function FeaturedArea() {
         <Featured id="side-slides">
             <BxSlider id="bx-wrapper">
                 <Slider {...sliderSettings}>
-                    {data.map((feat) => (
+                    {/* {data.map((feat) => (
                         <FeaturedItem {...feat} />
-                    ))}
+                    ))} */}
                 </Slider>
             </BxSlider>
         </Featured>
