@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import styled from "styled-components";
 // local components
 import FeaturedItem from "./FeaturedItem";
-// import data from "../../dummy/data.json";
 
 const Featured = styled.div`
     margin-bottom: 60px;
