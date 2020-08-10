@@ -162,3 +162,21 @@ i * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.p-slider {
+    margin-top: -20px;
+}
+
+.promo-link {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    display: block;
+}
+
+.p-item:last-child {
+    margin-right: 0;
+}

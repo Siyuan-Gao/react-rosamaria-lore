@@ -7,6 +7,7 @@ import styled from "styled-components";
 // importing layout
 import Layout from "../Layout";
 import Featured from "../components/HomePage/FeaturedArea";
+import PromoArea from "../components/HomePage/PromoArea";
 
 export default function Home() {
     const [isloading, setIsLoading] = useState(false);
@@ -40,6 +41,7 @@ export default function Home() {
 
             <main className="container">
                 <Featured />
+                <PromoArea />
                 <h1>Welcome to my site!</h1>
                 <p>Hello world</p>
                 <div>
