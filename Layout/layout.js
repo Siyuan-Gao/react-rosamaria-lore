@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 // local components
 import TopNavBar from "../components/TopNavBar";
 import SiteHeader from "../components/Header";
+import Footer from "../components/Footer";
 
 const LayoutBody = styled.div`
     background: #fff;
@@ -19,6 +20,7 @@ const Layout = (props) => {
             <TopNavBar />
             <SiteHeader />
             {props.children}
+            <Footer />
         </LayoutBody>
     );
 };

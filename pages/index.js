@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Layout from "../Layout";
 import Featured from "../components/HomePage/FeaturedArea";
 import PromoArea from "../components/HomePage/PromoArea";
+import MainBar from "../components/HomePage/MainBar";
 
 export default function Home() {
     const [isloading, setIsLoading] = useState(false);
@@ -42,15 +43,9 @@ export default function Home() {
             <main className="container">
                 <Featured />
                 <PromoArea />
-                <h1>Welcome to my site!</h1>
-                <p>Hello world</p>
-                <div>
-                    {articles.map((post) => (
-                        <div>
-                            <h1>{post.fields.title}</h1>
-                            {/* <h5>{post.fields.author.fields.name}</h5> */}
-                        </div>
-                    ))}
+                <div id="content">
+                    <MainBar />
+                    <div id="sidebar">Test</div>
                 </div>
             </main>
         </Layout>

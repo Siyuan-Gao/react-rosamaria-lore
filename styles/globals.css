@@ -59,7 +59,7 @@ h4,
 h5,
 h6 {
     /* font-size: 100%; */
-    /* font-weight: 400; */
+    font-weight: 400;
     font-family: "Playfair Display";
 }
 
@@ -179,4 +179,17 @@ i * {
 
 .p-item:last-child {
     margin-right: 0;
+}
+
+#content {
+    margin-bottom: 80px;
+}
+#content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#sidebar {
+    width: 260px;
+    float: right;
 }
