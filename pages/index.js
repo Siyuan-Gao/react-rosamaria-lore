@@ -9,6 +9,7 @@ import Layout from "../Layout";
 import Featured from "../components/HomePage/FeaturedArea";
 import PromoArea from "../components/HomePage/PromoArea";
 import MainBar from "../components/HomePage/MainBar";
+import Sidebar from "../components/HomePage/Sidebar";
 
 export default function Home() {
     const [isloading, setIsLoading] = useState(false);
@@ -45,7 +46,7 @@ export default function Home() {
                 <PromoArea />
                 <div id="content">
                     <MainBar />
-                    <div id="sidebar">Test</div>
+                    <Sidebar />
                 </div>
             </main>
         </Layout>

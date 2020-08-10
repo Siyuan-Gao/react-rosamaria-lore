@@ -1,6 +1,6 @@
 # next-js-rosamaria
 
-## Original Design
+### Original Design
 
 -   [SoloPine: RoseMary](https://solopine.com/rosemary/)
 
