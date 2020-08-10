@@ -196,3 +196,15 @@ i * {
 .widget {
     margin-bottom: 38px;
 }
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: 400;
+}
