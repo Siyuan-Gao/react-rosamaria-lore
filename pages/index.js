@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import styled from "styled-components";
 
 // import styles from "../styles/Home.module.css";
 // import client from "../utils/client";
@@ -32,11 +33,11 @@ export default function Home() {
     return (
         <Layout>
             <Head>
-                <title>Create Next App</title>
+                <title>Lorain Ambrocio</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main>
+            <main className="container">
                 <h1>Welcome to my site!</h1>
                 <p>Hello world</p>
                 <div>

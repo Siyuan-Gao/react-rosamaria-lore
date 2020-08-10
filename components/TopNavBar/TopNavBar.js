@@ -7,6 +7,7 @@ import ALink from "../../hooks/ActiveLink";
 import { NavWrapper, MenuMenu, MenuItem } from "./NavMenuLinks";
 import SearchBar from "./TopSearchBar";
 import ShowSearch from "./ShowSearch";
+import TopSocials from "./TopSocials";
 
 const TopNav = styled.div`
     background: #fff;
@@ -36,13 +37,18 @@ function TopNavBar() {
                             </ALink>
                         </MenuItem>
                         <MenuItem>
-                            <ALink href="/blog" activeClassName="active">
-                                <a>Blog</a>
+                            <ALink href="/about-me" activeClassName="active">
+                                <a>About</a>
                             </ALink>
                         </MenuItem>
                         <MenuItem>
-                            <ALink href="/about-me" activeClassName="active">
-                                <a>About</a>
+                            <ALink href="/blog" activeClassName="active">
+                                <a>Posts</a>
+                            </ALink>
+                        </MenuItem>
+                        <MenuItem>
+                            <ALink href="/projects" activeClassName="active">
+                                <a>Projects</a>
                             </ALink>
                         </MenuItem>
                         <MenuItem>
@@ -54,6 +60,7 @@ function TopNavBar() {
                 </NavWrapper>
                 <SearchBar />
                 <ShowSearch />
+                <TopSocials />
             </NavContainer>
         </TopNav>
     );

@@ -1,30 +1,32 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const Header = styled.header`
-    padding-top: 51px;
-    margin-bottom: 60px;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 0;
+    border-bottom: none;
 `;
 
 const Logo = styled.div`
     text-align: center;
-    padding: 68px 0 41px;
+    padding: 70px 0 50px;
     max-width: 100%;
     height: auto;
 `;
 
 export default function SiteHeader() {
     return (
-        <Header>
+        <Header id="header">
             <div className="container">
-                <div className="logo">
+                <Logo className="logo">
                     <h1>
-                        <a>
-                            <img src="/images/logo.png" alt="logo" />
-                        </a>
+                        <Link href="/">
+                            <a>
+                                <img src="/images/logo.png" alt="logo" />
+                            </a>
+                        </Link>
                     </h1>
-                </div>
+                </Logo>
             </div>
         </Header>
     );
