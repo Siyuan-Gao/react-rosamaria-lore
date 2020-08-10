@@ -1,6 +1,12 @@
 import React from "react";
-import styled from "styled-components";
 import Link from "next/link";
+import styled from "styled-components";
+// HOOKS for active links
+import ALink from "../../hooks/ActiveLink";
+// imported styled comps
+import { NavWrapper, MenuMenu, MenuItem } from "./NavMenuLinks";
+import SearchBar from "./TopSearchBar";
+import ShowSearch from "./ShowSearch";
 
 const TopNav = styled.div`
     background: #fff;
@@ -18,37 +24,6 @@ const NavContainer = styled.div`
     position: relative;
 `;
 
-const NavWrapper = styled.div`
-    float: left;
-`;
-
-const MenuMenu = styled.ul`
-    list-style: none;
-`;
-
-const MenuItem = styled.li`
-    display: inline-block;
-    margin-right: 28px;
-    position: relative;
-
-    a {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        line-height: 51px;
-        color: #000;
-        display: block;
-    }
-
-    a:hover {
-        color: #c69f73;
-    }
-
-    a.active {
-        font-weight: 700;
-    }
-`;
-
 function TopNavBar() {
     return (
         <TopNav id="top-nav-bar">
@@ -56,27 +31,29 @@ function TopNavBar() {
                 <NavWrapper id="nav-wrapper">
                     <MenuMenu id="menu">
                         <MenuItem>
-                            <Link href="/">
+                            <ALink href="/" activeClassName="active">
                                 <a>Home</a>
-                            </Link>
+                            </ALink>
                         </MenuItem>
-                        <MenuItem className>
-                            <Link href="/">
+                        <MenuItem>
+                            <ALink href="/blog" activeClassName="active">
                                 <a>Blog</a>
-                            </Link>
+                            </ALink>
                         </MenuItem>
                         <MenuItem>
-                            <Link href="/about-me">
+                            <ALink href="/about-me" activeClassName="active">
                                 <a>About</a>
-                            </Link>
+                            </ALink>
                         </MenuItem>
                         <MenuItem>
-                            <Link href="/contact">
+                            <ALink href="/contact" activeClassName="active">
                                 <a>Contact</a>
-                            </Link>
+                            </ALink>
                         </MenuItem>
                     </MenuMenu>
                 </NavWrapper>
+                <SearchBar />
+                <ShowSearch />
             </NavContainer>
         </TopNav>
     );
