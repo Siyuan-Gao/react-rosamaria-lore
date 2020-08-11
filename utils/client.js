@@ -1,8 +1,8 @@
 import * as contentful from "contentful";
 
 const client = contentful.createClient({
-    accessToken: process.env.NEXT_PUBLIC_CONT_TOKEN,
-    space: process.env.NEXT_PUBLIC_CONT_SPACE,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    space: process.env.CONTENTFUL_SPACE_ID,
 });
 
 export default client;

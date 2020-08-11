@@ -8,12 +8,16 @@ import PromoArea from "../components/HomePage/PromoArea";
 import MainBar from "../components/HomePage/MainBar";
 import Sidebar from "../components/HomePage/Sidebar";
 
-export default function Home() {
-    const [isloading, setIsLoading] = useState(false);
-    const [articles, setArticles] = useState([]);
+import { getAllPostsForHome } from "../lib/api";
+
+export default function Home({ preview, allPosts }) {
+    // const [isloading, setIsLoading] = useState(false);
+    // const [articles, setArticles] = useState([]);
+
     if (isloading) {
         return <p>Loading...</p>;
     }
+
     return (
         <Layout>
             <Head>
@@ -25,10 +29,18 @@ export default function Home() {
                 <Featured />
                 <PromoArea />
                 <div id="content">
-                    <MainBar />
+                    <MainBar allPosts={allPosts} />
                     <Sidebar />
                 </div>
             </main>
         </Layout>
     );
+}
+
+export async function getStaticProps({ preview = false }) {
+    const allPosts = await getAllPostsForHome(preview);
+    await console.log(allPosts[0].heroImage.fields.file);
+    return {
+        props: { preview, allPosts },
+    };
 }

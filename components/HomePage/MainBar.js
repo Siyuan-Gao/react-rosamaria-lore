@@ -26,9 +26,10 @@ const SpGrid = styled.div`
     }
 `;
 
-function MainBar(props) {
+function MainBar({ allPosts }) {
     const articleImg =
         "https://solopine.com/rosemary/wp-content/uploads/2018/11/p1-1080x690.jpg";
+    console.log(allPosts[0]);
     return (
         <DivMain id="main">
             <SpGrid className="p-grid">
