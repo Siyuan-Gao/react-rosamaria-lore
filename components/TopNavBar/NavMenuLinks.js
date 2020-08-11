@@ -26,6 +26,7 @@ export const MenuItem = styled.li`
         color: #c69f73;
     }
 
+    Link,
     .active {
         color: #c69f73 !important;
         font-weight: 700 !important;

@@ -26,35 +26,35 @@ const SpGrid = styled.div`
     }
 `;
 
-function MainBar({ allPosts }) {
+function MainBar() {
     const articleImg =
         "https://solopine.com/rosemary/wp-content/uploads/2018/11/p1-1080x690.jpg";
     // console.log(allPosts[0]);
     return (
-        <DivMain id='main'>
-            <SpGrid className='p-grid'>
+        <DivMain id="main">
+            <SpGrid className="p-grid">
                 <FreshArticle articleImg={articleImg} />
                 <li>
                     <GridArticle
-                        className='grid-item'
+                        className="grid-item"
                         articleImg={articleImg}
                     />
                 </li>
                 <li>
                     <GridArticle
-                        className='grid-item'
+                        className="grid-item"
                         articleImg={articleImg}
                     />
                 </li>
                 <li>
                     <GridArticle
-                        className='grid-item'
+                        className="grid-item"
                         articleImg={articleImg}
                     />
                 </li>
                 <li>
                     <GridArticle
-                        className='grid-item'
+                        className="grid-item"
                         articleImg={articleImg}
                     />
                 </li>

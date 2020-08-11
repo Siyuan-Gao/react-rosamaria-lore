@@ -8,23 +8,26 @@ import PromoArea from "../components/HomePage/PromoArea";
 import MainBar from "../components/HomePage/MainBar";
 import Sidebar from "../components/HomePage/Sidebar";
 
-import { getAllPostsForHome, client } from "../lib/api";
+import { fetchAllPosts } from "../lib/api";
 
-export default function Home({ preview, allPosts }) {
+export default function Home() {
     // const [isloading, setIsLoading] = useState(false);
     // const [articles, setArticles] = useState([]);
+    useEffect(() => {
+        fetchAllPosts();
+    }, []);
 
     return (
         <Layout>
             <Head>
                 <title>Lorain Ambrocio</title>
-                <link rel='icon' href='/favicon.ico' />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className='container'>
+            <main className="container">
                 <Featured />
                 <PromoArea />
-                <div id='content'>
+                <div id="content">
                     {/* <MainBar allPosts={allPosts} /> */}
                     <Sidebar />
                 </div>
@@ -32,10 +35,9 @@ export default function Home({ preview, allPosts }) {
         </Layout>
     );
 }
-export async function getStaticProps({ preview = false }) {
-    const allPosts = await getAllPostsForHome(preview);
-    console.log(allPosts);
-    return {
-        props: { preview, allPosts },
-    };
-}
+// export async function getStaticProps({ preview = false }) {
+//     const allPosts = await getAllPostsForHome(preview);
+//     return {
+//         props: { preview, allPosts },
+//     };
+// }
