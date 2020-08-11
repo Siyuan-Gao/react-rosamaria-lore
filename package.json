@@ -10,7 +10,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.1",
     "contentful": "^7.14.6",
-    "next": "9.5.1",
+    "next": "^9.5.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-slick": "^0.27.4",
