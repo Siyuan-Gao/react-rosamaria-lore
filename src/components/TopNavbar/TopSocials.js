@@ -1,6 +1,22 @@
 import React from "react";
-
 import styled from "styled-components";
+import * as Links from "../../utils/Constants";
+
+export default function TopSocials() {
+    return (
+        <SocialsDiv>
+            <a href={Links.LINKEDIN_LINK}>
+                <i className="fa fa-linkedin" />
+            </a>
+            <a href={Links.TWITTER_LINK}>
+                <i className="fa fa-twitter" />
+            </a>
+            {/* <a href="/#">
+                <i className="fa fa-rss" />
+            </a> */}
+        </SocialsDiv>
+    );
+}
 
 const SocialsDiv = styled.div`
     position: absolute;
@@ -20,19 +36,3 @@ const SocialsDiv = styled.div`
         right: 0;
     }
 `;
-
-export default function TopSocials() {
-    return (
-        <SocialsDiv>
-            <a href="#">
-                <i className="fa fa-twitter" />
-            </a>
-            <a href="#">
-                <i className="fa fa-linkedin" />
-            </a>
-            <a href="#">
-                <i className="fa fa-rss" />
-            </a>
-        </SocialsDiv>
-    );
-}

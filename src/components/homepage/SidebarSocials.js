@@ -1,5 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import * as links from "../../utils/Constants";
+
+function SidebarSocials({ children }) {
+    return (
+        <Widget id="socials-widget" className="widget">
+            {children}
+            <a href={links.LINKEDIN_LINK}>
+                <i className="fa fa-linkedin"></i>
+            </a>
+            <a href={links.TWITTER_LINK}>
+                <i className="fa fa-twitter"></i>
+            </a>
+            {/* <a href="#">
+                <i className="fa fa-rss"></i>
+            </a> */}
+        </Widget>
+    );
+}
 const Widget = styled.div`
     text-align: center;
 
@@ -24,22 +42,5 @@ const Widget = styled.div`
         font-size: 16px;
     }
 `;
-
-function SidebarSocials({ children }) {
-    return (
-        <Widget id="socials-widget" className="widget">
-            {children}
-            <a href="#">
-                <i className="fa fa-twitter"></i>
-            </a>
-            <a href="#">
-                <i className="fa fa-linkedin"></i>
-            </a>
-            <a href="#">
-                <i className="fa fa-rss"></i>
-            </a>
-        </Widget>
-    );
-}
 
 export default SidebarSocials;

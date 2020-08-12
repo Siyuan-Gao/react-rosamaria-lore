@@ -1,32 +1,48 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import useContentful from "../../hooks/useContentful";
+import { queryForTags, uniquePostTags } from "../../utils/queries";
 
 function Tagcloud({ children }) {
+    let { data, errors } = useContentful(queryForTags);
+
+    if (!data) {
+        return <p>Loading...</p>;
+    }
+    if (errors) {
+        return <span>{errors.map((error) => error.message).join(",")}</span>;
+    }
+    // console.log(data);
+    const { blogPostCollection } = data;
+    const tags = uniquePostTags(blogPostCollection);
     return (
         <div className="widget">
             {children}
             <div className="tagcloud">
-                {/*  */}
-                <TagLink href="/">
-                    <a href="#">Test 123</a>
-                </TagLink>
-                <TagLink href="/">
-                    <a href="#">Test 45667</a>
-                </TagLink>
-                <TagLink href="/">
-                    <a href="#">Test</a>
-                </TagLink>
-                <TagLink href="/">
-                    <a href="#">Test 3333</a>
-                </TagLink>
+                {tags.map((tag) => (
+                    <TagComponent key={tag} tagInfo={tag} />
+                ))}
             </div>
         </div>
     );
 }
 
+const TagComponent = ({ tagInfo }) => (
+    <TagLink>
+        <Link
+            to={{
+                pathname: `/tag/${tagInfo}`,
+                state: { tag: tagInfo },
+            }}
+        >
+            <p>{tagInfo}</p>
+        </Link>
+    </TagLink>
+);
+
 const TagLink = styled.span`
-    a {
+    p {
         font-size: 9px !important;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -42,7 +58,7 @@ const TagLink = styled.span`
         -webkit-transition: 0.3s;
     }
 
-    a:hover {
+    p:hover {
         opacity: 0.7;
         text-decoration: none;
         cursor: pointer;

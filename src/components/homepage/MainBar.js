@@ -33,7 +33,7 @@ function MainBar({ allPosts }) {
             <SpGrid className="p-grid">
                 <FreshArticle article={allPosts[0]} />
                 {allPosts.splice(1).map((post) => (
-                    <GridArt postInfo={post} />
+                    <GridArt key={post.sys.id} postInfo={post} />
                 ))}
             </SpGrid>
         </DivMain>

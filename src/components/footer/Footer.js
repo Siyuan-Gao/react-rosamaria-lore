@@ -23,9 +23,11 @@ function Footer() {
     return (
         <Footy>
             <div className="container">
-                <p className="left">© 2020 - All Rights Reserved.</p>
+                <p className="left">
+                    © 2020 Lorain Ambrocio - All Rights Reserved.
+                </p>
                 <p className="right">
-                    Developed by
+                    Coded with ❤{" "}
                     <a href="http://markambrocio.com"> Mark Ambrocio</a>
                 </p>
             </div>

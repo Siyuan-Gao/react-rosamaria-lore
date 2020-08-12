@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
 // local imports
 import Socials from "./SidebarSocials";
+import CategoryList from "./CategoryLists";
 import Tagcloud from "./Tagcloud";
 
 function Sidebar() {
@@ -16,12 +18,13 @@ function Sidebar() {
                 <AboutWidget>
                     <img src={profileUrl} alt="lore" className="about-round" />
                     <p>
-                        Meh synth Schlitz, tempor duis single-origin coffee ea
-                        next level ethnic fingestace fanny pack nostrud.
-                        Seitan...
+                        A higher education professional committed to helping
+                        students and prospective students navigate their
+                        education journey with maximum understanding of the
+                        commitment they are making...
                     </p>
-                    <Link to="/">
-                        <a href="#">Read More</a>
+                    <Link to="/about-me">
+                        <p>Read More</p>
                     </Link>
                 </AboutWidget>
             </div>
@@ -30,20 +33,11 @@ function Sidebar() {
                 <WidgetTitle>Subscribe & Follow</WidgetTitle>
             </Socials>
             {/* SUBSCRIBE */}
-            <div className="widget">
-                <form></form>
-            </div>
             {/* PROMOTED Types */}
             {/* CATEGORIES LIST */}
-            <div className="widget-categories widget">
+            <CategoryList id="categories">
                 <WidgetTitle>CATEGORIES</WidgetTitle>
-                <ul>
-                    {/* MAP through and count then display! */}
-                    <CatWidgetListItem cat_name="Lifestyle" cat_sum="6" />
-                    <CatWidgetListItem cat_name="Travel" cat_sum="3" />
-                    <CatWidgetListItem cat_name="Featured" cat_sum="1" />
-                </ul>
-            </div>
+            </CategoryList>
             {/* TAG CLOUD */}
             <Tagcloud>
                 <WidgetTitle>Tag Cloud</WidgetTitle>
@@ -52,11 +46,6 @@ function Sidebar() {
     );
 }
 // NORMAL COMPONENTS
-const CatWidgetListItem = ({ cat_name, cat_sum }) => (
-    <WidgetCatLi>
-        <a href={`/categories/${cat_name}`}>{cat_name}</a>({cat_sum})
-    </WidgetCatLi>
-);
 
 // STYLED COMPONENTS
 const WidgetTitle = styled.h4`
@@ -82,19 +71,6 @@ const AboutWidget = styled.div`
     }
     .about-round {
         border-radius: 50% !important;
-    }
-`;
-const WidgetCatLi = styled.li`
-    margin-bottom: 7px;
-    padding-bottom: 8px;
-    border-bottom: 1px dotted #d5d5d5;
-    color: #999;
-    a {
-        color: #424242;
-        margin-right: 5px;
-    }
-    a:hover {
-        text-decoration: underline;
     }
 `;
 

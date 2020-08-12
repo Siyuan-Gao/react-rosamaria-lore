@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import * as links from "../../utils/Constants";
 
 const DivPromoArea = styled.div`
     overflow: hidden;
@@ -59,7 +60,7 @@ function PromoArea() {
             <DivPromoItem image={img1} className="p-item">
                 {/* CHANGE URLS */}
                 {/* <Link to="/"> */}
-                <a href="#" className="promo-link">
+                <a href={links.TWITTER_LINK} className="promo-link">
                     {" "}
                 </a>
                 {/* </Link> */}
@@ -69,22 +70,18 @@ function PromoArea() {
             </DivPromoItem>
             <DivPromoItem image={img2} className="p-item">
                 {/* CHANGE URLS */}
-                {/* <Link to="/"> */}
-                <a href="#" className="promo-link">
-                    {" "}
-                </a>
-                {/* </Link> */}
+                <Link to="/about-me" className="promo-link">
+                    {/* <a href="#" className="promo-link"> */} {/* </a> */}
+                </Link>
                 <div className="promo-overlay">
                     <h4>About Me</h4>
                 </div>
             </DivPromoItem>
             <DivPromoItem image={img3} className="p-item">
                 {/* CHANGE URLS */}
-                {/* <Link to="/"> */}
-                <a href="#" className="promo-link">
-                    {" "}
-                </a>
-                {/* </Link> */}
+                <Link to="/contact" className="promo-link">
+                    {/* <a href="#" className="promo-link"> */} {/* </a> */}
+                </Link>
                 <div className="promo-overlay">
                     <h4>Contact</h4>
                 </div>

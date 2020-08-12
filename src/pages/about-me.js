@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../layout";
 import styled from "styled-components";
+import * as links from "../utils/Constants";
 
 function AboutMe() {
     const imgLink =
@@ -16,7 +17,11 @@ function AboutMe() {
                             </PostHeader>
                             <PostEntry>
                                 <p>
-                                    <img src={imgLink} className="alignright" />
+                                    <img
+                                        src={imgLink}
+                                        className="alignright"
+                                        alt="about me"
+                                    />
                                     Meh synth Schlitz, tempor duis single-origin
                                     coffee ea next level ethnic fingerstache
                                     fanny pack nostrud. Photo booth anim 8-bit
@@ -121,7 +126,10 @@ const PostMeta = () => (
         <div className="meta-share">
             <span className="share-text">
                 Share
-                <a href="#">
+                <a href={links.LINKEDIN_LINK}>
+                    <i className="fa fa-linkedin"></i>
+                </a>
+                <a href={links.TWITTER_LINK}>
                     <i className="fa fa-twitter"></i>
                 </a>
             </span>

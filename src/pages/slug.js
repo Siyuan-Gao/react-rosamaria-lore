@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useRouteMatch, useLocation } from "react-router-dom";
+import { useRouteMatch, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import moment from "moment";
 // LOCAL IMPORTs

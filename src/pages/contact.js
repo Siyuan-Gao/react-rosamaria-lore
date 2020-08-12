@@ -20,9 +20,9 @@ export default function Contact() {
                                 <h1>Contact</h1>
                             </PostHeader>
                             <PostImg>
-                                <a href="#">
-                                    <img src={contactImg} />
-                                </a>
+                                {/* <a href="#"> */}
+                                <img src={contactImg} alt="contact" />
+                                {/* </a> */}
                             </PostImg>
                             <PostEntry>
                                 <p>
@@ -72,6 +72,7 @@ const PostImg = styled.div`
     img {
         max-width: 100%;
         height: auto;
+        border: none;
     }
 
     a img {

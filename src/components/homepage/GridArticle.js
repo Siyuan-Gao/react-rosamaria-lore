@@ -14,13 +14,16 @@ export default function GridArticle({ postInfo }) {
                         state: { postID: postInfo.sys.id },
                     }}
                 >
-                    <img src={postInfo.heroImage.url} />
+                    <img
+                        src={postInfo && postInfo.heroImage.url}
+                        alt={postInfo && postInfo.title}
+                    />
                 </Link>
             </PostImg>
             <PostHeader>
                 <span className="cat">
                     <Link to="/">
-                        <p>{postInfo.categories[0]}</p>
+                        <p>{postInfo && postInfo.categories[0]}</p>
                     </Link>
                 </span>
                 <h2>
@@ -30,14 +33,14 @@ export default function GridArticle({ postInfo }) {
                             state: { postID: postInfo.sys.id },
                         }}
                     >
-                        <p href="#">{postInfo.title}</p>
+                        <p href="#">{postInfo && postInfo.title}</p>
                     </Link>
                 </h2>
             </PostHeader>
 
             <PostEntry>
                 <p>
-                    {postInfo.body.length > 200
+                    {postInfo && postInfo.body.length > 200
                         ? `${postInfo.body.substring(0, 200)}...`
                         : postInfo.body}
                 </p>

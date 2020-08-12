@@ -20,7 +20,7 @@ function FeaturedItem({ featInfo }) {
                             >
                                 <CatA>
                                     {/* CATERGORY */}
-                                    {categories[0]}
+                                    {featInfo && categories[0]}
                                 </CatA>
                             </Link>
                         </span>
@@ -33,7 +33,7 @@ function FeaturedItem({ featInfo }) {
                             >
                                 <p>
                                     {/* BLOG TITLE */}
-                                    {title}
+                                    {featInfo && title}
                                 </p>
                             </Link>
                         </CatH2>
@@ -41,7 +41,7 @@ function FeaturedItem({ featInfo }) {
                             {/* BLOG POSTED DATE */}
                             {moment(publishDate).format("MMM Do, YYYY")}
                         </SpanDate>
-                        <Button_ReadMore>
+                        <ButtonReadMore>
                             <Link
                                 to={{
                                     pathname: `/posts/${slug.toLowerCase()}`,
@@ -50,7 +50,7 @@ function FeaturedItem({ featInfo }) {
                             >
                                 <p>Read More</p>
                             </Link>
-                        </Button_ReadMore>
+                        </ButtonReadMore>
                     </PostHeader>
                 </FeatOverlayInner>
             </FeatOverlay>
@@ -100,7 +100,7 @@ const PostHeader = styled.div`
     text-align: center;
 `;
 
-const CatA = styled.a`
+const CatA = styled.p`
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -135,7 +135,7 @@ const SpanDate = styled.span`
     color: #888;
 `;
 
-const Button_ReadMore = styled.span`
+const ButtonReadMore = styled.span`
     p {
         font-size: 10px;
         text-transform: uppercase;

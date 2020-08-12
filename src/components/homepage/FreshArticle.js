@@ -3,14 +3,20 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import * as links from "../../utils/Constants";
 
 function ArticleComponent({ article }) {
     return (
         <ArticlePost>
             <PostHeader>
                 <span className="cat">
-                    <Link to="/">
-                        <p>{article.categories[0]}</p>
+                    <Link
+                        to={{
+                            pathname: `/category/${article.categories[0].toLowerCase()}`,
+                            state: { category: article.categories[0] },
+                        }}
+                    >
+                        <p>{article && article.categories[0]}</p>
                     </Link>
                 </span>
                 <h2>
@@ -20,7 +26,7 @@ function ArticleComponent({ article }) {
                             state: { postID: article.sys.id },
                         }}
                     >
-                        <p>{article.title}</p>
+                        <p>{article && article.title}</p>
                     </Link>
                 </h2>
                 {/* {console.log(article.publishDate)} */}
@@ -35,14 +41,15 @@ function ArticleComponent({ article }) {
                         state: { postID: article.sys.id },
                     }}
                 >
-                    <a href="#">
-                        <img src={article.heroImage.url} />
-                    </a>
+                    <img
+                        src={article && article.heroImage.url}
+                        alt={article && article.title}
+                    />
                 </Link>
             </PostImg>
             <PostEntry>
                 <p>
-                    {article.body.length > 450
+                    {article && article.body.length > 450
                         ? `${article.body.substring(0, 450)}...`
                         : article.body}
                 </p>
@@ -64,19 +71,24 @@ function ArticleComponent({ article }) {
                         <a href="#">Comment</a>
                     </Link>
                 </div> */}
-                <div className="meta-share">
-                    <span className="share-text">Share</span>
-                    <a href="#">
-                        <i className="fa fa-facebook"></i>
-                    </a>
-                    <a href="#">
-                        <i className="fa fa-twitter"></i>
-                    </a>
-                </div>
+                <SocialShareUniversal />
             </PostMeta>
         </ArticlePost>
     );
 }
+
+// func components
+const SocialShareUniversal = () => (
+    <div className="meta-share">
+        <span className="share-text">Share</span>
+        <a href={links.LINKEDIN_LINK}>
+            <i className="fa fa-linkedin"></i>
+        </a>
+        <a href={links.TWITTER_LINK}>
+            <i className="fa fa-twitter"></i>
+        </a>
+    </div>
+);
 
 ArticleComponent.propTypes = {
     blogPost: PropTypes.shape({
@@ -219,4 +231,11 @@ const PostMeta = styled.div`
 `;
 
 export default ArticleComponent;
-export { ArticlePost, PostHeader, PostImg, PostEntry, PostMeta };
+export {
+    ArticlePost,
+    PostHeader,
+    PostImg,
+    PostEntry,
+    PostMeta,
+    SocialShareUniversal,
+};

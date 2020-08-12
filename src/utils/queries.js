@@ -146,11 +146,11 @@ export const queryPostsNotFeatured = `query {
   }
 }`;
 
-export function categoriesCounter(data) {
+export function categoriesCounter(blogPostCollection) {
     let initalArray = [];
-    data.blogPostCollection.items.map((item, index) => {
-        initalArray.push(item.categories[0].toLowerCase());
-    });
+    blogPostCollection.items.map((item) =>
+        initalArray.push(item.categories[0])
+    );
     let counts = {};
     initalArray.forEach((x) => {
         counts[x] = (counts[x] || 0) + 1;
@@ -159,14 +159,12 @@ export function categoriesCounter(data) {
     return counts;
 }
 
-export function uniquePostTags(data) {
+export function uniquePostTags(blogPostCollection) {
     let initalArray = [];
     // add all values to initalArray
-    data.blogPostCollection.items.map((item, index) => {
-        item.tags.map((subItem) => {
-            initalArray.push(subItem);
-        });
-    });
+    blogPostCollection.items.map((item, index) =>
+        item.tags.map((subItem) => initalArray.push(subItem))
+    );
     // filter out duplicates
     const tagArray = initalArray.filter(
         (value, index) => initalArray.indexOf(value) === index

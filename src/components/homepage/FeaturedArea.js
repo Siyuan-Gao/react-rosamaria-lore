@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 // local components
@@ -25,15 +25,19 @@ export default function FeaturedArea() {
     if (!data) {
         return <p>loading...</p>;
     }
+    if (errors) {
+        return <p>Error!</p>;
+    }
     const { blogPostCollection } = data;
     // console.log(blogPostCollection.items);
     return (
         <Featured id="side-slides">
             <BxSlider id="bx-wrapper">
                 <Slider {...sliderSettings}>
-                    {blogPostCollection.items.map((feat) => (
-                        <FeaturedItem featInfo={feat} />
-                    ))}
+                    {data &&
+                        blogPostCollection.items.map((feat) => (
+                            <FeaturedItem key={feat.sys.id} featInfo={feat} />
+                        ))}
                 </Slider>
             </BxSlider>
         </Featured>
