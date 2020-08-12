@@ -46,6 +46,22 @@ const DivPromoItem = styled.div`
             box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.25);
         }
     }
+
+    @media ${({ theme }) => theme.mediaQ.Lg} {
+        width: 293px;
+        height: 172px;
+    }
+
+    @media ${({ theme }) => theme.mediaQ.Md} {
+        width: 230px;
+        height: 135px;
+        margin-right: 18px;
+    }
+    @media ${({ theme }) => theme.mediaQ.Xs} {
+        width: 100%;
+        height: 176px;
+        margin-bottom: 30px;
+    }
 `;
 
 function PromoArea() {

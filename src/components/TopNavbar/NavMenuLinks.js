@@ -2,6 +2,16 @@ import styled from "styled-components";
 
 export const NavWrapper = styled.div`
     float: left;
+
+    @media ${({ theme }) => theme.mediaQ.Md} {
+        display: none;
+    }
+    @media ${({ theme }) => theme.mediaQ.Xs} {
+        display: none;
+    }
+    @media ${({ theme }) => theme.mediaQ.Sm} {
+        display: none;
+    }
 `;
 
 export const MenuMenu = styled.ul`

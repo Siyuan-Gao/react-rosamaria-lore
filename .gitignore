@@ -37,4 +37,4 @@ yarn-error.log*
 .vercel
 
 dummy/
-ref.css
+ref*

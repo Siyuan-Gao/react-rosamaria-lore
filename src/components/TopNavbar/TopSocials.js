@@ -35,4 +35,8 @@ const SocialsDiv = styled.div`
     .nosearch {
         right: 0;
     }
+
+    @media ${({ theme }) => theme.mediaQ.Xs} {
+        right: 55px;
+    }
 `;

@@ -57,9 +57,9 @@ export default function GridArticle({ postInfo }) {
 const ArticlePost = styled.article`
     margin-bottom: 50px;
 
-    .grid-item {
+    /* .grid-item {
         margin-bottom: 40px;
-    }
+    } */
 `;
 
 const PostHeader = styled.div`
@@ -92,6 +92,14 @@ const PostHeader = styled.div`
 
         p:hover {
             opacity: 0.6;
+        }
+    }
+
+    @media ${({ theme }) => theme.mediaQ.Xs} {
+        h2 {
+            p {
+                font-size: 18px;
+            }
         }
     }
 `;

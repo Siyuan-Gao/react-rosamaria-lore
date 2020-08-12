@@ -13,6 +13,12 @@ const theme = {
     colors: {
         primary: "#0070f3",
     },
+    mediaQ: {
+        Lg: `only screen and (min-width: 942px) and (max-width: 1170px)`,
+        Md: `only screen and (min-width: 768px) and (max-width: 960px)`,
+        Xs: `only screen and (max-width: 767px)`,
+        Sm: `only screen and (min-width: 480px) and (max-width: 768px)`,
+    },
 };
 function App() {
     return (

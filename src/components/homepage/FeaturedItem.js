@@ -70,6 +70,24 @@ const FeatItem = styled.div`
     display: block;
     width: 100%;
     padding: 17.2% 32.5%;
+
+    @media ${({ theme }) => theme.mediaQ.Lg} {
+        height: 574px;
+        padding: 15.2% 28.5%;
+    }
+
+    @media ${({ theme }) => theme.mediaQ.Md} {
+        height: 444px;
+        padding: 12.2% 25.5%;
+    }
+    @media ${({ theme }) => theme.mediaQ.Xs} {
+        height: 220px;
+        padding: 16.2% 16.5%;
+    }
+    @media ${({ theme }) => theme.mediaQ.Sm} {
+        height: 310px;
+        padding: 14.2% 20.5%;
+    }
 `;
 
 const FeatOverlay = styled.div`
@@ -100,17 +118,6 @@ const PostHeader = styled.div`
     text-align: center;
 `;
 
-const CatA = styled.p`
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 1px solid;
-    border-color: #c69f73;
-    padding-bottom: 2px;
-    display: inline-block;
-    margin: 0 4px 12px;
-`;
-
 const CatH2 = styled.h2`
     margin-bottom: 14px;
 
@@ -125,6 +132,49 @@ const CatH2 = styled.h2`
     p:hover {
         opacity: 0.6;
     }
+
+    @media ${({ theme }) => theme.mediaQ.Md} {
+        p {
+            font-size: 22px;
+        }
+    }
+
+    @media ${({ theme }) => theme.mediaQ.Xs} {
+        margin-bottom: 0;
+
+        p {
+            font-size: 15px;
+        }
+    }
+
+    @media ${({ theme }) => theme.mediaQ.Sm} {
+        margin-bottom: 14px;
+
+        p {
+            font-size: 16px;
+        }
+    }
+`;
+
+const CatA = styled.p`
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid;
+    border-color: #c69f73;
+    padding-bottom: 2px;
+    display: inline-block;
+    margin: 0 4px 12px;
+
+    @media ${({ theme }) => theme.mediaQ.Sm} {
+        font-size: 10px;
+        margin-bottom: 12px;
+    }
+
+    @media ${({ theme }) => theme.mediaQ.Xs} {
+        font-size: 8px;
+        margin-bottom: 7px;
+    }
 `;
 
 const SpanDate = styled.span`
@@ -133,6 +183,13 @@ const SpanDate = styled.span`
     font-size: 11px;
     font-style: italic;
     color: #888;
+    @media ${({ theme }) => theme.mediaQ.Xs} {
+        display: none;
+        margin-bottom: 0;
+    }
+    @media ${({ theme }) => theme.mediaQ.Sm} {
+        display: block;
+    }
 `;
 
 const ButtonReadMore = styled.span`
@@ -155,6 +212,10 @@ const ButtonReadMore = styled.span`
     p:hover {
         background: #c69f73;
         color: #fff;
+    }
+
+    @media ${({ theme }) => theme.mediaQ.Xs} {
+        display: none;
     }
 `;
 
