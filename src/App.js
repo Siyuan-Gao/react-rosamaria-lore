@@ -7,6 +7,7 @@ import About from "./pages/about-me";
 import Blog from "./pages/blog";
 import Projects from "./pages/projects";
 import Contanct from "./pages/contact";
+import DetailPost from "./pages/slug";
 
 const theme = {
     colors: {
@@ -20,16 +21,19 @@ function App() {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route path="/about-me">
+                <Route exact path="/about-me">
                     <About />
                 </Route>
-                <Route path="/posts">
+                <Route exact path="/posts">
                     <Blog />
                 </Route>
-                <Route path="/projects">
+                <Route path="/posts/:slug">
+                    <DetailPost />
+                </Route>
+                <Route exact path="/projects">
                     <Projects />
                 </Route>
-                <Route path="/contact">
+                <Route exact path="/contact">
                     <Contanct />
                 </Route>
             </Switch>

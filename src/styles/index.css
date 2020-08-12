@@ -189,6 +189,10 @@ i * {
     display: table;
     clear: both;
 }
+#main {
+    width: 760px;
+    float: left;
+}
 #sidebar {
     width: 260px;
     float: right;

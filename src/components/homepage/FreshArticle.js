@@ -14,17 +14,27 @@ function ArticleComponent({ article }) {
                     </Link>
                 </span>
                 <h2>
-                    <Link to="/">
+                    <Link
+                        to={{
+                            pathname: `/posts/${article.slug.toLowerCase()}`,
+                            state: { postID: article.sys.id },
+                        }}
+                    >
                         <p>{article.title}</p>
                     </Link>
                 </h2>
-                {console.log(article.publishDate)}
+                {/* {console.log(article.publishDate)} */}
                 <span className="date published">
                     {moment(article.publishDate).format("MMM Do, YYYY")}
                 </span>
             </PostHeader>
             <PostImg>
-                <Link to="/">
+                <Link
+                    to={{
+                        pathname: `/posts/${article.slug.toLowerCase()}`,
+                        state: { postID: article.sys.id },
+                    }}
+                >
                     <a href="#">
                         <img src={article.heroImage.url} />
                     </a>
@@ -36,18 +46,24 @@ function ArticleComponent({ article }) {
                         ? `${article.body.substring(0, 450)}...`
                         : article.body}
                 </p>
-                <Link to={`/posts/${article.slug.toLowerCase()}`}>
+                <Link
+                    // to={`/posts/${article.slug.toLowerCase()}`}
+                    to={{
+                        pathname: `/posts/${article.slug.toLowerCase()}`,
+                        state: { postID: article.sys.id },
+                    }}
+                >
                     <p className="more-link">
                         <span className="more-button">Continue Reading</span>
                     </p>
                 </Link>
             </PostEntry>
             <PostMeta>
-                <div className="meta-comments">
+                {/* <div className="meta-comments">
                     <Link to="#">
                         <a href="#">Comment</a>
                     </Link>
-                </div>
+                </div> */}
                 <div className="meta-share">
                     <span className="share-text">Share</span>
                     <a href="#">
@@ -203,3 +219,4 @@ const PostMeta = styled.div`
 `;
 
 export default ArticleComponent;
+export { ArticlePost, PostHeader, PostImg, PostEntry, PostMeta };

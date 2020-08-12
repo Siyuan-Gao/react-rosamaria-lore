@@ -28,41 +28,23 @@ const SpGrid = styled.div`
 `;
 
 function MainBar({ allPosts }) {
-    const articleImg =
-        "https://solopine.com/rosemary/wp-content/uploads/2018/11/p1-1080x690.jpg";
-    // console.log(allPosts[0]);
     return (
         <DivMain id="main">
             <SpGrid className="p-grid">
                 <FreshArticle article={allPosts[0]} />
-                <li>
-                    <GridArticle
-                        className="grid-item"
-                        articleImg={articleImg}
-                    />
-                </li>
-                <li>
-                    <GridArticle
-                        className="grid-item"
-                        articleImg={articleImg}
-                    />
-                </li>
-                <li>
-                    <GridArticle
-                        className="grid-item"
-                        articleImg={articleImg}
-                    />
-                </li>
-                <li>
-                    <GridArticle
-                        className="grid-item"
-                        articleImg={articleImg}
-                    />
-                </li>
+                {allPosts.splice(1).map((post) => (
+                    <GridArt postInfo={post} />
+                ))}
             </SpGrid>
         </DivMain>
     );
 }
+
+const GridArt = ({ postInfo }) => (
+    <li>
+        <GridArticle className="grid-item" postInfo={postInfo} />
+    </li>
+);
 
 export default MainBar;
 export { DivMain };

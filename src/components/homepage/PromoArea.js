@@ -58,29 +58,33 @@ function PromoArea() {
         <DivPromoArea className="p-slider">
             <DivPromoItem image={img1} className="p-item">
                 {/* CHANGE URLS */}
-                <Link to="/">
-                    <a href="#" className="promo-link">
-                        {" "}
-                    </a>
-                </Link>
+                {/* <Link to="/"> */}
+                <a href="#" className="promo-link">
+                    {" "}
+                </a>
+                {/* </Link> */}
                 <div className="promo-overlay">
                     <h4>Follow @ Twitter</h4>
                 </div>
             </DivPromoItem>
             <DivPromoItem image={img2} className="p-item">
                 {/* CHANGE URLS */}
-                <Link to="/">
-                    <a href="#" className="promo-link"></a>
-                </Link>
+                {/* <Link to="/"> */}
+                <a href="#" className="promo-link">
+                    {" "}
+                </a>
+                {/* </Link> */}
                 <div className="promo-overlay">
                     <h4>About Me</h4>
                 </div>
             </DivPromoItem>
             <DivPromoItem image={img3} className="p-item">
                 {/* CHANGE URLS */}
-                <Link to="/">
-                    <a href="#" className="promo-link"></a>
-                </Link>
+                {/* <Link to="/"> */}
+                <a href="#" className="promo-link">
+                    {" "}
+                </a>
+                {/* </Link> */}
                 <div className="promo-overlay">
                     <h4>Contact</h4>
                 </div>

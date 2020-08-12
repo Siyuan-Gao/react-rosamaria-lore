@@ -1,44 +1,51 @@
 import React from "react";
-
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
-export default function GridArticle({ articleImg }) {
+export default function GridArticle({ postInfo }) {
+    // console.log(postInfo);
     return (
         <ArticlePost className="grid-item">
             <PostImg>
-                <Link to="/">
-                    <a href="#">
-                        <img src={articleImg} />
-                    </a>
+                <Link
+                    to={{
+                        pathname: `/posts/${postInfo.slug.toLowerCase()}`,
+                        state: { postID: postInfo.sys.id },
+                    }}
+                >
+                    <img src={postInfo.heroImage.url} />
                 </Link>
             </PostImg>
             <PostHeader>
                 <span className="cat">
                     <Link to="/">
-                        <a href="#">Cat</a>
+                        <p>{postInfo.categories[0]}</p>
                     </Link>
                 </span>
                 <h2>
-                    <Link to="/">
-                        <a href="#">Title</a>
+                    <Link
+                        to={{
+                            pathname: `/posts/${postInfo.slug.toLowerCase()}`,
+                            state: { postID: postInfo.sys.id },
+                        }}
+                    >
+                        <p href="#">{postInfo.title}</p>
                     </Link>
                 </h2>
             </PostHeader>
 
             <PostEntry>
                 <p>
-                    Meh synth Schlitz, tempor duis single-origin coffee ea next
-                    level ethnic fingerstache fanny pack nostrud. Photo booth
-                    anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia
-                    esse nihil, flexitarian Truffaut synth art party deep v
-                    chillwave. Seitan High Life reprehenderit consectetur
-                    cupidatat kogi. Et leggings kale chips proident chillwave
-                    deep origin coffee ea.
+                    {postInfo.body.length > 200
+                        ? `${postInfo.body.substring(0, 200)}...`
+                        : postInfo.body}
                 </p>
             </PostEntry>
             <PostMeta>
-                <span className="date">Aug 10, 2020</span>
+                <span className="date">
+                    {moment(postInfo.publishDate).format("MMM Do, YYYY")}
+                </span>
             </PostMeta>
         </ArticlePost>
     );
@@ -56,7 +63,7 @@ const PostHeader = styled.div`
     margin-bottom: 16px;
     text-align: center;
 
-    .cat a {
+    .cat p {
         font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -70,7 +77,7 @@ const PostHeader = styled.div`
     h2 {
         margin-bottom: 10px;
 
-        a {
+        p {
             color: #000;
             font-size: 22px;
             font-weight: 400;
@@ -80,7 +87,7 @@ const PostHeader = styled.div`
             -webkit-transition: 0.2s;
         }
 
-        a:hover {
+        p:hover {
             opacity: 0.6;
         }
     }

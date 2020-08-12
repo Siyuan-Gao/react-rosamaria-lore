@@ -1,45 +1,54 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
-function FeaturedItem(props) {
-    const {
-        imageURL,
-        post_cat,
-        post_cat_url,
-        post_title,
-        post_date,
-        post_url,
-    } = props;
+function FeaturedItem({ featInfo }) {
+    const { heroImage, categories, slug, sys, title, publishDate } = featInfo;
 
     return (
-        <FeatItem image={imageURL}>
+        <FeatItem image={heroImage.url}>
             <FeatOverlay>
                 <FeatOverlayInner>
                     <PostHeader id="post-header">
                         <span className="cat">
-                            <Link to={post_cat_url}>
+                            <Link
+                                to={{
+                                    pathname: `/category/${categories[0].toLowerCase()}`,
+                                    state: { category: categories[0] },
+                                }}
+                            >
                                 <CatA>
                                     {/* CATERGORY */}
-                                    {post_cat}
+                                    {categories[0]}
                                 </CatA>
                             </Link>
                         </span>
                         <CatH2>
-                            <Link to={post_url}>
-                                <a href="#">
+                            <Link
+                                to={{
+                                    pathname: `/posts/${slug.toLowerCase()}`,
+                                    state: { postID: sys.id },
+                                }}
+                            >
+                                <p>
                                     {/* BLOG TITLE */}
-                                    {post_title}
-                                </a>
+                                    {title}
+                                </p>
                             </Link>
                         </CatH2>
                         <SpanDate>
                             {/* BLOG POSTED DATE */}
-                            {post_date}
+                            {moment(publishDate).format("MMM Do, YYYY")}
                         </SpanDate>
                         <Button_ReadMore>
-                            <Link to="/">
-                                <a href="#">Read More</a>
+                            <Link
+                                to={{
+                                    pathname: `/posts/${slug.toLowerCase()}`,
+                                    state: { postID: sys.id },
+                                }}
+                            >
+                                <p>Read More</p>
                             </Link>
                         </Button_ReadMore>
                     </PostHeader>
@@ -105,7 +114,7 @@ const CatA = styled.a`
 const CatH2 = styled.h2`
     margin-bottom: 14px;
 
-    a {
+    p {
         color: #000;
         font-size: 24px;
         -o-transition: 0.2s;
@@ -113,7 +122,7 @@ const CatH2 = styled.h2`
         -moz-transition: 0.2s;
         -webkit-transition: 0.2s;
     }
-    a:hover {
+    p:hover {
         opacity: 0.6;
     }
 `;
@@ -127,7 +136,7 @@ const SpanDate = styled.span`
 `;
 
 const Button_ReadMore = styled.span`
-    a {
+    p {
         font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -143,7 +152,7 @@ const Button_ReadMore = styled.span`
         -moz-transition: 0.2s;
         -webkit-transition: 0.2s;
     }
-    a:hover {
+    p:hover {
         background: #c69f73;
         color: #fff;
     }

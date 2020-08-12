@@ -23,7 +23,7 @@ export default function SiteHeader() {
                         <Link to="/">
                             {/* <a href="#"> */}
                             <img
-                                src="https://solopine.com/rosemary/wp-content/themes/rosemary/img/logo.png"
+                                src="https://images.ctfassets.net/0dpthcqf2ojw/5bu2cMRooCz0MCcAUMs4a8/72ce863cf36fa1dbfb45bd13f163fd65/lore-logo.png?h=250"
                                 alt="logo"
                             />
                             {/* </a> */}

@@ -7,11 +7,10 @@ import MainBar from "../components/homepage/MainBar";
 import Sidebar from "../components/homepage/Sidebar";
 // contenful Hook
 import useContentful from "../hooks/useContentful";
-// Queries
-import { queryAllPostsWithAuthors } from "../utils/queries";
+import { queryPostsNotFeatured } from "../utils/queries";
 
 export default function Home() {
-    let { data, errors } = useContentful(queryAllPostsWithAuthors);
+    let { data, errors } = useContentful(queryPostsNotFeatured);
 
     if (errors)
         return (
@@ -21,16 +20,13 @@ export default function Home() {
         );
     if (!data) return <p>Loading...</p>;
     const allPosts = data.blogPostCollection.items;
-
+    // console.log(allPosts);
     return (
         <Layout>
             <main className="container">
                 <Featured />
                 <PromoArea />
                 <div id="content">
-                    <div className="main">
-                        {/* <FreshArt article={blogPost} /> */}
-                    </div>
                     <MainBar allPosts={allPosts} />
                     <Sidebar />
                 </div>

@@ -4,15 +4,9 @@ import styled from "styled-components";
 // local components
 import FeaturedItem from "./FeaturedItem";
 
-const Featured = styled.div`
-    margin-bottom: 60px;
-`;
-
-const BxSlider = styled.div`
-    position: relative;
-    padding: 0;
-    *zoom: 1;
-`;
+// hooks
+import useContentful from "../../hooks/useContentful";
+import { querySliderFeaturedPosts } from "../../utils/queries";
 
 export default function FeaturedArea() {
     const sliderSettings = {
@@ -23,16 +17,35 @@ export default function FeaturedArea() {
         draggable: false,
         autoplay: true,
         autoPlaySpeed: 3500,
+        dots: true,
     };
+
+    let { data, errors } = useContentful(querySliderFeaturedPosts);
+
+    if (!data) {
+        return <p>loading...</p>;
+    }
+    const { blogPostCollection } = data;
+    // console.log(blogPostCollection.items);
     return (
         <Featured id="side-slides">
             <BxSlider id="bx-wrapper">
                 <Slider {...sliderSettings}>
-                    {/* {data.map((feat) => (
-                        <FeaturedItem {...feat} />
-                    ))} */}
+                    {blogPostCollection.items.map((feat) => (
+                        <FeaturedItem featInfo={feat} />
+                    ))}
                 </Slider>
             </BxSlider>
         </Featured>
     );
 }
+
+const Featured = styled.div`
+    margin-bottom: 60px;
+`;
+
+const BxSlider = styled.div`
+    position: relative;
+    padding: 0;
+    *zoom: 1;
+`;
