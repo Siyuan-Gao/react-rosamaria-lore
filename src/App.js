@@ -7,7 +7,7 @@ import About from "./pages/about-me";
 import Blog from "./pages/blog";
 import Projects from "./pages/projects";
 import Contanct from "./pages/contact";
-import DetailPost from "./pages/slug";
+import DetailPost from "./pages/posts/slug";
 
 const theme = {
     colors: {
@@ -35,6 +35,9 @@ function App() {
                 </Route>
                 <Route exact path="/contact">
                     <Contanct />
+                </Route>
+                <Route>
+                    <p>Error...</p>
                 </Route>
             </Switch>
         </ThemeProvider>

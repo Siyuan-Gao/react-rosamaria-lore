@@ -25,7 +25,11 @@ function CategoryList({ children }) {
             <ul>
                 {/* MAP through and combine => then display! */}
                 {catNames.map((cat, idx) => (
-                    <CatWidgetListItem name={cat} sum={catValues[idx]} />
+                    <CatWidgetListItem
+                        key={cat}
+                        name={cat}
+                        sum={catValues[idx]}
+                    />
                 ))}
             </ul>
         </div>

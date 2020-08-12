@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import * as links from "../../utils/Constants";
 
 function ArticleComponent({ article }) {
     return (
@@ -71,20 +70,29 @@ function ArticleComponent({ article }) {
                         <a href="#">Comment</a>
                     </Link>
                 </div> */}
-                <SocialShareUniversal />
+                <SocialShareUniversal
+                    title={article.title}
+                    pathname={article.slug}
+                />
             </PostMeta>
         </ArticlePost>
     );
 }
 
 // func components
-const SocialShareUniversal = () => (
+const SocialShareUniversal = ({ title, pathname }) => (
     <div className="meta-share">
         <span className="share-text">Share</span>
-        <a href={links.LINKEDIN_LINK}>
+        <a
+            href={`https://www.linkedin.com/shareArticle?&mini=true&url=https://lorainambrocio.com/posts/${pathname}&title=${title}`}
+        >
             <i className="fa fa-linkedin"></i>
         </a>
-        <a href={links.TWITTER_LINK}>
+        <a
+            href={`https://twitter.com/intent/tweet?text=Check%20out%20this%20article:%20${title}&url=https://lorainambrocio.com/posts/${pathname}`}
+            rel="noopener noreferrer"
+            target="_blank"
+        >
             <i className="fa fa-twitter"></i>
         </a>
     </div>

@@ -30,8 +30,7 @@ query {
   }
 }`;
 
-export const querySpecificPost = (postID) => `
-query {
+export const querySpecificPost = (postID) => `query {
     blogPost(id:"${postID}"){
       sys{
         id
@@ -146,6 +145,42 @@ export const queryPostsNotFeatured = `query {
   }
 }`;
 
+export const qeuryPostsToMatchSlugs = `query {
+  blogPostCollection(order:slug_ASC){
+
+    items {
+      sys {
+        id
+      }
+      title
+      slug
+      publishDate
+      heroImage {
+        url(transform: {
+          width:760,
+          height:503,
+          resizeStrategy:FILL
+        } )
+      }
+      body
+      categories
+      tags
+      authorCollection(limit:1){
+        items{
+          image{
+            url(transform: {width:250,resizeStrategy:THUMB} )
+          }
+          name
+        }
+      }
+
+
+    }
+
+
+  }
+}`;
+
 export function categoriesCounter(blogPostCollection) {
     let initalArray = [];
     blogPostCollection.items.map((item) =>
@@ -171,4 +206,13 @@ export function uniquePostTags(blogPostCollection) {
     );
     // returns array with unique values
     return tagArray;
+}
+
+export function userCameFromOutside(ogSlug, data) {
+    const { blogPostCollection } = data;
+    const postWeNeed = blogPostCollection.items.filter(
+        (item) => item.slug.toLowerCase() === ogSlug.toLowerCase()
+    );
+
+    return postWeNeed[0];
 }
