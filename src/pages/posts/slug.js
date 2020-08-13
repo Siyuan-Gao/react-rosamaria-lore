@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useRouteMatch, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import moment from "moment";
@@ -22,7 +22,7 @@ import {
 
 export default function Post(props) {
     const { params } = useRouteMatch("/posts/:slug");
-    const { pathname, state } = useLocation();
+    const { pathname } = useLocation();
 
     // ! 1. query for slugs
     let { data, errors } = useContentful(qeuryPostsToMatchSlugs);

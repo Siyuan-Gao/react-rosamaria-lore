@@ -9,6 +9,7 @@ import { NavWrapper, MenuMenu, MenuItem } from "./NavMenuLinks";
 import SearchBar from "./TopSearchBar";
 import ShowSearch from "./ShowSearch";
 import TopSocials from "./TopSocials";
+import MobileMenu from "./MobileMenu";
 
 const TopNav = styled.div`
     background: #fff;
@@ -59,8 +60,11 @@ function TopNavBar() {
                         </MenuItem>
                     </MenuMenu>
                 </NavWrapper>
+                <div id="mobile-menu">
+                    <MobileMenu />
+                </div>
                 <SearchBar />
-                <ShowSearch />
+                <ShowSearch id="mobileSearch" />
                 <TopSocials />
             </NavContainer>
         </TopNav>

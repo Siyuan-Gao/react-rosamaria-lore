@@ -22,6 +22,16 @@ const MobileSearch = styled.div`
         border: 1px solid #ddd;
         outline: none;
     }
+
+    /* @media ${({ theme }) => theme.mediaQ.Md} {
+        display: block;
+    }
+    @media ${({ theme }) => theme.mediaQ.Xs} {
+        display: block;
+    }
+    @media ${({ theme }) => theme.mediaQ.Sm} {
+        display: block;
+    } */
 `;
 
 export default function ShowSearch() {
