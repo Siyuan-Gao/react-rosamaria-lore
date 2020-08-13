@@ -1,30 +1,38 @@
 import React from "react";
 import styled from "styled-components";
 
-const navM = styled.div`
+import { slide as Menu } from "react-burger-menu";
+
+const NavM = styled.div`
     display: none;
     font-size: 16px;
     background: #fff;
     padding: 6px;
 
-    &:before {
+    :before {
         content: " ";
         display: table;
     }
 
-    &:after {
+    :after {
         clear: both;
+        content: " ";
+        display: table;
     }
 
     @media ${({ theme }) => theme.mediaQ.Md} {
         display: block !important;
+        color: #000;
+        /* background: red; */
     }
     @media ${({ theme }) => theme.mediaQ.Xs} {
         display: block !important;
+        color: #000;
+        background: blue;
     }
 `;
 
-const navB = styled.a`
+const NavB = styled.a`
     position: relative;
     display: block;
     vertical-align: middle;
@@ -50,33 +58,53 @@ const navB = styled.a`
     }
 `;
 
-const navSpanIcons = styled.span`
+const NavSpanIcons = styled.span`
     margin-top: 7px;
-    margin: 0;
     float: left;
-    /* prettier-ignore */
-    span,
-    .ibar {
-            display: block;
-            width: 1.125em;
-            height: .125em;
-            background-color: #000;
-        }
+
+    #n-t {
+        margin: 0;
+    }
+    .icon-bar {
+        display: block;
+        width: 1.125em;
+        height: 0.125em;
+    }
 `;
 
-function MobileMenu() {
+const MobileMenu = styled.div``;
+
+function MobileMenuu() {
     return (
-        <navM>
-            <navB href="#">
+        <MobileMenu id="mobile-men">
+            {/* <NavM>
+            <NavB href="#">
                 <span className="mt"></span>
-                <navSpanIcons>
-                    <span id="ibar"></span>
-                    <span id="ibar"></span>
-                    <span id="ibar"></span>
-                </navSpanIcons>
-            </navB>
-        </navM>
+                <NavSpanIcons id="n-t">
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                </NavSpanIcons>
+            </NavB>
+        </NavM> */}
+            <NavM>
+                <Menu>
+                    <a id="home" className="menu-item" href="/t1">
+                        Home
+                    </a>
+                    <a id="home" className="menu-item" href="/t1">
+                        Home
+                    </a>
+                    <a id="home" className="menu-item" href="/t1">
+                        Home
+                    </a>
+                    <a id="home" className="menu-item" href="/t1">
+                        Home
+                    </a>
+                </Menu>
+            </NavM>
+        </MobileMenu>
     );
 }
 
-export default MobileMenu;
+export default MobileMenuu;

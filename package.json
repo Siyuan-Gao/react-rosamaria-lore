@@ -4,6 +4,9 @@
     "private": true,
     "dependencies": {
         "@contentful/rich-text-react-renderer": "^14.1.1",
+        "@fortawesome/fontawesome-svg-core": "^1.2.30",
+        "@fortawesome/free-solid-svg-icons": "^5.14.0",
+        "@fortawesome/react-fontawesome": "^0.1.11",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.5.0",
         "@testing-library/user-event": "^7.2.1",
@@ -13,6 +16,7 @@
         "moment": "^2.27.0",
         "prop-types": "^15.7.2",
         "react": "^16.13.1",
+        "react-burger-menu": "^2.7.1",
         "react-contentful": "^2.0.20",
         "react-dom": "^16.13.1",
         "react-router-dom": "^5.2.0",

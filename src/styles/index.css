@@ -217,6 +217,12 @@ var {
     font-weight: 700 !important;
 }
 
+#n-t {
+    margin-top: 7px;
+    margin: 0;
+    float: left;
+}
+
 /* L */
 @media only screen and (min-width: 942px) and (max-width: 1170px) {
     .container {
