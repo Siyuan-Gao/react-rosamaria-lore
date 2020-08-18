@@ -1,4 +1,4 @@
-# next-js-rosamaria
+# React-Rosamaria-Lore
 
 ### Original Design
 
