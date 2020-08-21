@@ -1,7 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import moment from "moment";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
+// local imports
+import GridBody from '../posts/grid-body';
 
 export default function GridArticle({ postInfo }) {
     // console.log(postInfo);
@@ -40,14 +42,15 @@ export default function GridArticle({ postInfo }) {
 
             <PostEntry>
                 <p>
-                    {postInfo && postInfo.body.length > 200
+                    {/* {postInfo && postInfo.body.length > 200
                         ? `${postInfo.body.substring(0, 200)}...`
-                        : postInfo.body}
+                        : postInfo.body} */}
+                    <GridBody content={postInfo.body.json.content[0]} />
                 </p>
             </PostEntry>
             <PostMeta>
                 <span className="date">
-                    {moment(postInfo.publishDate).format("MMM Do, YYYY")}
+                    {moment(postInfo.publishDate).format('MMM Do, YYYY')}
                 </span>
             </PostMeta>
         </ArticlePost>

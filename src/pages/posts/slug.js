@@ -1,27 +1,28 @@
-import React from "react";
-import { useRouteMatch, useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
-import moment from "moment";
+import React from 'react';
+import { useRouteMatch, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
 // LOCAL IMPORTs
-import { DivMain } from "../../components/homepage/MainBar";
+import { DivMain } from '../../components/homepage/MainBar';
 import {
     ArticlePost,
     PostHeader,
     PostImg,
     PostEntry,
     PostMeta,
-} from "../../components/homepage/FreshArticle";
-import Sidebar from "../../components/homepage/Sidebar";
-import Layout from "../../layout";
+} from '../../components/homepage/FreshArticle';
+import Sidebar from '../../components/homepage/Sidebar';
+import Layout from '../../layout';
+import PostBody from '../../components/posts/post-body';
 // contentful stuff
-import useContentful from "../../hooks/useContentful";
+import useContentful from '../../hooks/useContentful';
 import {
     qeuryPostsToMatchSlugs,
     userCameFromOutside,
-} from "../../utils/queries";
+} from '../../utils/queries';
 
 export default function Post(props) {
-    const { params } = useRouteMatch("/posts/:slug");
+    const { params } = useRouteMatch('/posts/:slug');
     const { pathname } = useLocation();
 
     // ! 1. query for slugs
@@ -31,10 +32,11 @@ export default function Post(props) {
         return <p>Loading...</p>;
     }
     if (errors) {
-        return <p>{errors.map((error) => error.message).join(",")}</p>;
+        return <p>{errors.map((error) => error.message).join(',')}</p>;
     }
     if (data) {
         const Post = userCameFromOutside(params.slug, data);
+        // console.log(Post);
         return (
             <Layout>
                 <main className="container">
@@ -53,19 +55,20 @@ export default function Post(props) {
                                     <span className="date published">
                                         {moment(
                                             data && Post.publishDate
-                                        ).format("MMM Do, YYYY")}
+                                        ).format('MMM Do, YYYY')}
                                     </span>
                                 </PostHeader>
                                 <PostImg>
                                     <Link to="/">
                                         <img
-                                            src={data && Post.heroImage["url"]}
+                                            src={data && Post.heroImage['url']}
                                             alt={data && Post.title}
                                         />
                                     </Link>
                                 </PostImg>
                                 <PostEntry>
-                                    <p>{data && Post.body}</p>
+                                    {/* <p>{data && Post.body}</p> */}
+                                    <PostBody content={Post.body.json} />
                                 </PostEntry>
                                 <PostMeta>
                                     <div className="meta-share">

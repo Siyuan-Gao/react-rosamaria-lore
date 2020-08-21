@@ -15,7 +15,9 @@ query {
           resizeStrategy:FILL
         } )
       }
-      body
+      body{
+        json
+      }
       categories
       tags
       authorCollection(limit:1){
@@ -45,7 +47,9 @@ export const querySpecificPost = (postID) => `query {
           resizeStrategy:FILL
         } )
       }
-      body
+      body{
+        json
+      }
       categories
       tags
       authorCollection(limit:1){
@@ -130,7 +134,9 @@ export const queryPostsNotFeatured = `query {
           resizeStrategy:FILL
         } )
       }
-      body
+      body{
+        json
+      }
       categories
       tags
       authorCollection(limit:1){
@@ -162,7 +168,9 @@ export const qeuryPostsToMatchSlugs = `query {
           resizeStrategy:FILL
         } )
       }
-      body
+      body{
+        json
+      }
       categories
       tags
       authorCollection(limit:1){

@@ -1,8 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import moment from "moment";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
+// local
+import FreshBody from '../posts/fresh-body';
 
 function ArticleComponent({ article }) {
     return (
@@ -30,7 +32,7 @@ function ArticleComponent({ article }) {
                 </h2>
                 {/* {console.log(article.publishDate)} */}
                 <span className="date published">
-                    {moment(article.publishDate).format("MMM Do, YYYY")}
+                    {moment(article.publishDate).format('MMM Do, YYYY')}
                 </span>
             </PostHeader>
             <PostImg>
@@ -48,9 +50,7 @@ function ArticleComponent({ article }) {
             </PostImg>
             <PostEntry>
                 <p>
-                    {article && article.body.length > 450
-                        ? `${article.body.substring(0, 450)}...`
-                        : article.body}
+                    <FreshBody content={article.body.json.content[0]} />
                 </p>
                 <Link
                     // to={`/posts/${article.slug.toLowerCase()}`}

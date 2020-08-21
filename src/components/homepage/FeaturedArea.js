@@ -1,12 +1,12 @@
-import React from "react";
-import Slider from "react-slick";
-import styled from "styled-components";
+import React from 'react';
+import Slider from 'react-slick';
+import styled from 'styled-components';
 // local components
-import FeaturedItem from "./FeaturedItem";
+import FeaturedItem from './FeaturedItem';
 
 // hooks
-import useContentful from "../../hooks/useContentful";
-import { querySliderFeaturedPosts } from "../../utils/queries";
+import useContentful from '../../hooks/useContentful';
+import { querySliderFeaturedPosts } from '../../utils/queries';
 
 export default function FeaturedArea() {
     const sliderSettings = {
