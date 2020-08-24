@@ -1,3 +1,4 @@
+// GRAPHQL QUERIES
 export const queryAllPostsWithAuthors = `
 query {
   blogPostCollection {
@@ -189,6 +190,15 @@ export const qeuryPostsToMatchSlugs = `query {
   }
 }`;
 
+export const queryAboutPage = `query{
+  about(id: "35NHlwC2hqnoab4dKcCtWk") {
+    body{
+      json
+    }
+  }
+}`;
+
+//  FUNCTIONS
 export function categoriesCounter(blogPostCollection) {
     let initalArray = [];
     blogPostCollection.items.map((item) =>

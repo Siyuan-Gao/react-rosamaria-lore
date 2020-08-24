@@ -55,10 +55,10 @@ const RichTextOptions = {
         [BLOCKS.PARAGRAPH]: (node, children) => {
             return (
                 <p
-                    style={{
-                        lineHeight: '24px',
-                        marginBottom: '20px',
-                    }}
+                // style={{
+                //     lineHeight: '24px',
+                //     marginBottom: '20px',
+                // }}
                 >
                     {children}
                 </p>
@@ -233,15 +233,15 @@ const RichTextOptions = {
             );
         },
         // IMAGES
-        // [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
-        //     console.log('node', node);
-        //     const path = `https://${node.data.target.fields.file[
-        //         'url'
-        //     ].substring(2)}`;
-        //     const desc = `${node.data.target.fields.description}`;
-        //     // console.log(node.data.target.fields);
-        //     return <img src={path} alt={desc} />;
-        // },
+        [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+            console.log('node', node);
+            // const path = `https://${node.data.target.fields.file[
+            //     'url'
+            // ].substring(2)}`;
+            // const desc = `${node.data.target.fields.description}`;
+            // // console.log(node.data.target.fields);
+            // return <img src={path} alt={desc} />;
+        },
     },
 };
 

@@ -1,115 +1,38 @@
-import React from "react";
-import Layout from "../layout";
-import styled from "styled-components";
-import * as links from "../utils/Constants";
+import React from 'react';
+import Layout from '../layout';
+import styled from 'styled-components';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+// Social Feeds
+import * as links from '../utils/Constants';
+// contentful
+import { queryAboutPage } from '../utils/queries';
+import useContentful from '../hooks/useContentful';
 
 function AboutMe() {
-    const imgLink =
-        "https://solopine.com/rosemary/wp-content/uploads/2015/03/about2.jpg";
+    let { data, errors } = useContentful(queryAboutPage);
+
+    if (errors)
+        return (
+            <span style={{ color: 'red' }}>
+                {errors.map((error) => error.message).join(',')}
+            </span>
+        );
+    if (!data) return <p>Loading...</p>;
+
+    console.log('About', data.about.body);
+    const { json } = data.about.body;
     return (
         <Layout>
             <div className="container">
                 <div id="content">
-                    <main className="fullwidth">
+                    <main className="">
                         <article>
                             <PostHeader>
                                 <h1>About Me:</h1>
                             </PostHeader>
                             <PostEntry>
-                                <p>
-                                    <img
-                                        src={imgLink}
-                                        className="alignright"
-                                        alt="about me"
-                                    />
-                                    Meh synth Schlitz, tempor duis single-origin
-                                    coffee ea next level ethnic fingerstache
-                                    fanny pack nostrud. Photo booth anim 8-bit
-                                    hella, PBR 3 wolf moon beard Helvetica.
-                                    Salvia esse nihil, flexitarian Truffaut
-                                    synth art party deep v chillwave. Seitan
-                                    High Life reprehenderit consectetur
-                                    cupidatat kogi. Et leggings fanny pack, elit
-                                    bespoke vinyl art party Pitchfork selfies
-                                    master cleanse Kickstarter seitan retro.
-                                    Drinking vinegar stumptown yr pop-up artisan
-                                    sunt. Deep v cliche lomo.
-                                </p>
-                                <p>
-                                    Exercitation photo booth stumptown tote bag
-                                    Banksy, elit small batch freegan sed. Craft
-                                    beer elit seitan exercitation, photo booth
-                                    et 8-bit kale chips proident chillwave deep
-                                    v laborum. Aliquip veniam delectus, Marfa
-                                    eiusmod Pinterest. Et leggings fanny pack,
-                                    elit bespoke vinyl art.
-                                </p>
-                                <p>
-                                    Disrupt vero ea id fugiat, lo-fi lomo
-                                    post-ironic irony kitsch Banksy. Tumblr kale
-                                    chips single-origin coffee Wes Anderson +1
-                                    tousled, disrupt butcher sapiente banh mi
-                                    brunch nisi irony. Artisan wolf fap lomo,
-                                    laborum Tumblr anim consequat fashion axe
-                                    sartorial leggings viral.
-                                </p>
-                                <p>
-                                    Exercitation photo booth stumptown tote bag
-                                    Banksy, elit small batch freegan sed. Craft
-                                    beer elit seitan exercitation, photo booth
-                                    et 8-bit kale chips proident chillwave deep
-                                    v laborum. Aliquip veniam delectus, Marfa
-                                    eiusmod Pinterest. Et leggings fanny pack,
-                                    elit bespoke vinyl art
-                                </p>
-                                <p>
-                                    Meh synth Schlitz, tempor duis single-origin
-                                    coffee ea next level ethnic fingerstache
-                                    fanny pack nostrud. Photo booth anim 8-bit
-                                    hella, PBR 3 wolf moon beard Helvetica.
-                                    Salvia esse nihil, flexitarian Truffaut
-                                    synth art party deep v chillwave. Seitan
-                                    High Life reprehenderit consectetur
-                                    cupidatat kogi. Et leggings fanny pack, elit
-                                    bespoke vinyl art.
-                                </p>
-                                <p>
-                                    Meh synth Schlitz, tempor duis single-origin
-                                    coffee ea next level ethnic fingerstache
-                                    fanny pack nostrud. Photo booth anim 8-bit
-                                    hella, PBR 3 wolf moon beard Helvetica.
-                                    Salvia esse nihil, flexitarian Truffaut
-                                    synth art party deep v chillwave. Seitan
-                                    High Life reprehenderit consectetur
-                                    cupidatat kogi. Et leggings fanny pack, elit
-                                    bespoke vinyl art party Pitchfork selfies
-                                    master cleanse Kickstarter seitan retro.
-                                    Drinking vinegar stumptown yr pop-up artisan
-                                    sunt. Deep v cliche lomo biodiesel Neutra.
-                                </p>
-                                <BlockedQuote>
-                                    <p className="p-img blo-p">
-                                        Truffaut synth art party deep v
-                                        chillwave. Seitan High Life
-                                        reprehenderit consectetur cupidatat
-                                        kogi. Et leggings fanny pack, elit
-                                        bespoke vinyl art party artisan.
-                                    </p>
-                                    <cite>John Doe</cite>
-                                </BlockedQuote>
-                                <p>
-                                    Disrupt vero ea id fugiat, lo-fi lomo
-                                    post-ironic irony kitsch Banksy. Tumblr kale
-                                    chips single-origin coffee Wes Anderson +1
-                                    tousled, disrupt butcher sapiente banh mi
-                                    brunch nisi irony. Artisan wolf fap lomo,
-                                    laborum Tumblr anim consequat fashion axe
-                                    sartorial leggings viral.
-                                </p>
-                                <img
-                                    src="https://solopine.com/redwood/wp-content/uploads/2015/06/signing.png"
-                                    alt="about me"
-                                />
+                                {/* <PostBody content={json} /> */}
+                                {documentToReactComponents(json)}
                             </PostEntry>
                             <PostMeta />
                             <PostComments />
@@ -174,7 +97,7 @@ const BlockedQuote = styled.blockquote`
     margin: 20px 0 0;
 
     p {
-        font-family: "Georgia";
+        font-family: 'Georgia';
         font-style: italic;
         font-size: 20px;
         line-height: 30px;
@@ -190,7 +113,7 @@ const BlockedQuote = styled.blockquote`
         font-weight: 400;
 
         :before {
-            content: "-";
+            content: '-';
             margin-right: 4px;
         }
     }
