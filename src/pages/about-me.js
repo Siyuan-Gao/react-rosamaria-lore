@@ -18,8 +18,6 @@ function AboutMe() {
             </span>
         );
     if (!data) return <p>Loading...</p>;
-
-    console.log('About', data.about.body);
     const { json } = data.about.body;
     return (
         <Layout>
@@ -91,33 +89,33 @@ const PostEntry = styled.div`
     }
 `;
 
-const BlockedQuote = styled.blockquote`
-    border-left: 3px solid;
-    padding: 30px 60px;
-    margin: 20px 0 0;
+// const BlockedQuote = styled.blockquote`
+//     border-left: 3px solid;
+//     padding: 30px 60px;
+//     margin: 20px 0 0;
 
-    p {
-        font-family: 'Georgia';
-        font-style: italic;
-        font-size: 20px;
-        line-height: 30px;
-        color: #000;
-        position: relative;
-    }
+//     p {
+//         font-family: 'Georgia';
+//         font-style: italic;
+//         font-size: 20px;
+//         line-height: 30px;
+//         color: #000;
+//         position: relative;
+//     }
 
-    cite {
-        margin-top: -10px;
-        color: #999;
-        display: block;
-        font-style: normal;
-        font-weight: 400;
+//     cite {
+//         margin-top: -10px;
+//         color: #999;
+//         display: block;
+//         font-style: normal;
+//         font-weight: 400;
 
-        :before {
-            content: '-';
-            margin-right: 4px;
-        }
-    }
-`;
+//         :before {
+//             content: '-';
+//             margin-right: 4px;
+//         }
+//     }
+// `;
 
 const PostMetaStyled = styled.div`
     margin-top: 35px;

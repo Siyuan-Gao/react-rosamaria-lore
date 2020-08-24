@@ -16,6 +16,7 @@ query {
           resizeStrategy:FILL
         } )
       }
+      postDescription
       body{
         json
       }
@@ -48,6 +49,7 @@ export const querySpecificPost = (postID) => `query {
           resizeStrategy:FILL
         } )
       }
+      postDescription
       body{
         json
       }
@@ -95,9 +97,7 @@ export const querySliderFeaturedPosts = `query  {
       categories
     }
   }
-}
-
-`;
+}`;
 
 export const queryForTags = `query{
   blogPostCollection(where:{
@@ -135,6 +135,7 @@ export const queryPostsNotFeatured = `query {
           resizeStrategy:FILL
         } )
       }
+      postDescription
       body{
         json
       }
@@ -154,7 +155,6 @@ export const queryPostsNotFeatured = `query {
 
 export const qeuryPostsToMatchSlugs = `query {
   blogPostCollection(order:slug_ASC){
-
     items {
       sys {
         id
@@ -169,6 +169,7 @@ export const qeuryPostsToMatchSlugs = `query {
           resizeStrategy:FILL
         } )
       }
+      postDescription
       body{
         json
       }
@@ -182,11 +183,7 @@ export const qeuryPostsToMatchSlugs = `query {
           name
         }
       }
-
-
     }
-
-
   }
 }`;
 

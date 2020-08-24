@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouteMatch, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import { Helmet } from 'react-helmet';
 // LOCAL IMPORTs
 import { DivMain } from '../../components/homepage/MainBar';
 import {
@@ -39,6 +40,7 @@ export default function Post(props) {
         // console.log(Post);
         return (
             <Layout>
+                <Meta Post={Post} />
                 <main className="container">
                     <div id="content">
                         <DivMain id="main">
@@ -98,3 +100,25 @@ export default function Post(props) {
         );
     }
 }
+
+const Meta = ({ Post }) => {
+    return (
+        <Helmet>
+            {/* Test */}
+            <title>{Post.title} – Lorain Ambrocio</title>
+            <meta name="description" content={Post.postDescription} />
+            <meta name="keywords" content={Post.tags} />
+            <meta property="og:site_name" content="Lorain Ambrocio" />
+            <meta
+                property="og:title"
+                content={`${Post.title} – Lorain Ambrocio`}
+            />
+            <meta property="og:description" content={Post.postDescription} />
+            <meta property="og:image" content={Post.heroImage.url} />
+            <meta
+                property="og:url"
+                content={`https://lorainambrocio.com/posts/${Post.slug}`}
+            />
+        </Helmet>
+    );
+};

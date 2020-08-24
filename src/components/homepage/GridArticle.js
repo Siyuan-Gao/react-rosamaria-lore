@@ -41,12 +41,10 @@ export default function GridArticle({ postInfo }) {
             </PostHeader>
 
             <PostEntry>
-                <p>
-                    {/* {postInfo && postInfo.body.length > 200
-                        ? `${postInfo.body.substring(0, 200)}...`
-                        : postInfo.body} */}
-                    <GridBody content={postInfo.body.json.content[0]} />
-                </p>
+                {/* {postInfo && postInfo.postDescription.length > 200
+                        ? `${postInfo.postDescription.substring(0, 200)}...`
+                        : postInfo.postDescription} */}
+                <GridBody content={postInfo.body.json.content[0]} />
             </PostEntry>
             <PostMeta>
                 <span className="date">

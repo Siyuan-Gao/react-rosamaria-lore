@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 // importing layout
 import Layout from '../layout';
 import Featured from '../components/homepage/FeaturedArea';
@@ -23,6 +24,37 @@ export default function Home() {
     // console.log(allPosts);
     return (
         <Layout>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Lorain Ambrocio - Home</title>
+                <meta
+                    name="description"
+                    content="Lorain Ambrocios thoughts and past works!"
+                />
+                <meta
+                    name="keywords"
+                    content="academic advising, higher education, blog,"
+                />
+                <meta
+                    property="og:site_name"
+                    content="Lorain Ambrocio\'s site"
+                />
+                <meta property="og:title" content="Lorain Ambrocio - Home" />
+                <meta
+                    property="og:description"
+                    content="Thoughts and previous works in the higher education field."
+                />
+                <meta
+                    property="og:image"
+                    content="https://images.ctfassets.net/0dpthcqf2ojw/5bu2cMRooCz0MCcAUMs4a8/72ce863cf36fa1dbfb45bd13f163fd65/lore-logo.png?h=250"
+                />
+                <meta property="og:url" content="https://lorainambrocio.com/" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta
+                    name="twitter:image:alt"
+                    content="logo for lorainambrocio.com"
+                />
+            </Helmet>
             <main className="container">
                 <Featured />
                 <PromoArea />

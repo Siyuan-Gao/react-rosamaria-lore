@@ -54,7 +54,7 @@ const RichTextOptions = {
         },
         [BLOCKS.PARAGRAPH]: (node, children) => {
             return (
-                <span
+                <p
                     style={{
                         lineHeight: '24px',
                         marginBottom: '20px',
@@ -63,7 +63,7 @@ const RichTextOptions = {
                     {children[0].length > 200
                         ? `${children[0].substring(0, 200)}...`
                         : children[0]}
-                </span>
+                </p>
             );
         },
         [BLOCKS.HEADING_1]: (node, children) => {

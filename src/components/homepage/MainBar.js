@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // local imports
-import FreshArticle from "./FreshArticle";
-import GridArticle from "./GridArticle";
+import FreshArticle from './FreshArticle';
+import GridArticle from './GridArticle';
 
 function MainBar({ allPosts }) {
     return (
