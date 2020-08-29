@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // local imports
 import Layout from '../layout';
 import Siderbar from '../components/homepage/Sidebar';
-import DivMain from '../components/homepage/MainBar';
+import DivMain from '../components/styled/DivMain';
 import PostHeader from '../components/styled/PostHeader';
 import PostEntry from '../components/styled/PostEntry';
 import PostMeta from '../components/PostMetaComponent';
