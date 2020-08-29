@@ -1,163 +1,59 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 // local imports
-import GridBody from '../posts/grid-body';
+import GridBody from '../posts/grid-body'; // specific parsing
+import ArticlePost from '../styled/ArticlePost';
+import PostImg from '../styled/PostImg';
+import PostHeader from '../styled/PostHeader';
+import PostEntry from '../styled/PostEntry';
+import GridMeta from '../styled/GridMeta';
 
 export default function GridArticle({ postInfo }) {
-    // console.log(postInfo);
-    return (
-        <ArticlePost className="grid-item">
-            <PostImg>
-                <Link
-                    to={{
-                        pathname: `/posts/${postInfo.slug.toLowerCase()}`,
-                        state: { postID: postInfo.sys.id },
-                    }}
-                >
-                    <img
-                        src={postInfo && postInfo.heroImage.url}
-                        alt={postInfo && postInfo.title}
-                    />
-                </Link>
-            </PostImg>
-            <PostHeader>
-                <span className="cat">
-                    <Link to="/">
-                        <p>{postInfo && postInfo.categories[0]}</p>
-                    </Link>
-                </span>
-                <h2>
-                    <Link
-                        to={{
-                            pathname: `/posts/${postInfo.slug.toLowerCase()}`,
-                            state: { postID: postInfo.sys.id },
-                        }}
-                    >
-                        <p href="#">{postInfo && postInfo.title}</p>
-                    </Link>
-                </h2>
-            </PostHeader>
-
-            <PostEntry>
-                {/* {postInfo && postInfo.postDescription.length > 200
+	// console.log(postInfo);
+	return (
+		<ArticlePost className="grid-item">
+			<PostImg>
+				<Link
+					to={{
+						pathname: `/posts/${postInfo.slug.toLowerCase()}`,
+						state: { postID: postInfo.sys.id },
+					}}
+				>
+					<img
+						src={postInfo && postInfo.heroImage.url}
+						alt={postInfo && postInfo.title}
+					/>
+				</Link>
+			</PostImg>
+			<PostHeader className="g">
+				<span className="cat">
+					<Link to="/">
+						<p>{postInfo && postInfo.categories[0]}</p>
+					</Link>
+				</span>
+				<h2>
+					<Link
+						to={{
+							pathname: `/posts/${postInfo.slug.toLowerCase()}`,
+							state: { postID: postInfo.sys.id },
+						}}
+					>
+						<p href="#">{postInfo && postInfo.title}</p>
+					</Link>
+				</h2>
+			</PostHeader>
+			<PostEntry>
+				{/* {postInfo && postInfo.postDescription.length > 200
                         ? `${postInfo.postDescription.substring(0, 200)}...`
                         : postInfo.postDescription} */}
-                <GridBody content={postInfo.body.json.content[0]} />
-            </PostEntry>
-            <PostMeta>
-                <span className="date">
-                    {moment(postInfo.publishDate).format('MMM Do, YYYY')}
-                </span>
-            </PostMeta>
-        </ArticlePost>
-    );
+				<GridBody content={postInfo.body.json.content[0]} />
+			</PostEntry>
+			<GridMeta>
+				<span className="date">
+					{moment(postInfo.publishDate).format('MMM Do, YYYY')}
+				</span>
+			</GridMeta>
+		</ArticlePost>
+	);
 }
-
-const ArticlePost = styled.article`
-    margin-bottom: 50px;
-
-    /* .grid-item {
-        margin-bottom: 40px;
-    } */
-`;
-
-const PostHeader = styled.div`
-    margin-bottom: 16px;
-    text-align: center;
-
-    .cat p {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        border-bottom: 1px solid;
-        border-color: #c69f73;
-        padding-bottom: 2px;
-        display: inline-block;
-        margin: 0 4px 8px;
-    }
-
-    h2 {
-        margin-bottom: 10px;
-
-        p {
-            color: #000;
-            font-size: 22px;
-            font-weight: 400;
-            -o-transition: 0.2s;
-            -ms-transition: 0.2s;
-            -moz-transition: 0.2s;
-            -webkit-transition: 0.2s;
-        }
-
-        p:hover {
-            opacity: 0.6;
-        }
-    }
-
-    @media ${({ theme }) => theme.mediaQ.Xs} {
-        h2 {
-            p {
-                font-size: 18px;
-            }
-        }
-    }
-`;
-
-const PostImg = styled.div`
-    margin-bottom: 20px;
-    text-align: center;
-
-    a img {
-        border: none;
-    }
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-`;
-
-const PostEntry = styled.div`
-    p {
-        margin-bottom: 20px;
-    }
-
-    .more-link {
-        text-align: center;
-        display: block;
-
-        .more-button {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #000;
-            background: #fff;
-            font-weight: 700;
-            display: inline-block;
-            margin-top: 16px;
-            padding: 9px 24px 10px;
-            border: 1px solid;
-            border-color: #c69f73;
-            -o-transition: 0.2s;
-            -ms-transition: 0.2s;
-            -moz-transition: 0.2s;
-            -webkit-transition: 0.2s;
-            line-height: 24px;
-        }
-        .more-button:hover {
-            background: #c69f73;
-            color: #fff;
-            border: 1px solid;
-            border-color: #c69f73;
-        }
-    }
-`;
-
-const PostMeta = styled.div`
-    .date {
-        font-size: 11px;
-        font-style: italic;
-        color: #999;
-    }
-`;
