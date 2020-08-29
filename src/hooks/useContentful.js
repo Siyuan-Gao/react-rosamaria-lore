@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const { REACT_APP_CONTENTFUL_SPACE, REACT_APP_CONTENTFUL_TOKEN } = process.env;
 
 function useContentful(query) {
-    const [data, setData] = useState(null);
-    const [errors, setErrors] = useState(null);
+	const [data, setData] = useState(null);
+	const [errors, setErrors] = useState(null);
 
-    useEffect(() => {
-        //prettier-ignore
-        window.fetch(`https://graphql.contentful.com/content/v1/spaces/${REACT_APP_CONTENTFUL_SPACE}`,
+	useEffect(() => {
+		//prettier-ignore
+		window.fetch(`https://graphql.contentful.com/content/v1/spaces/${REACT_APP_CONTENTFUL_SPACE}`,
         {
             method: 'POST',
             headers: {
@@ -24,9 +24,9 @@ function useContentful(query) {
                 if(data) setData(data);
             })
             .catch(error=>setErrors([error]))
-    }, [query]);
+	}, [query]);
 
-    return { data, errors };
+	return { data, errors };
 }
 
 export default useContentful;

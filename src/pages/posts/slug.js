@@ -44,15 +44,15 @@ export default function Post(props) {
 					<div id="content">
 						<DivMain id="main">
 							<ArticlePost>
-								<PostHeader>
+								<PostHeader class="fresh">
 									<span className="cat">
 										<Link to="/">
 											<p>{data && Post.categories}</p>
 										</Link>
 									</span>
-									<h2>
+									<h1>
 										<p>{data && Post.title}</p>
-									</h2>
+									</h1>
 									<span className="date published">
 										{moment(
 											data && Post.publishDate
@@ -60,12 +60,13 @@ export default function Post(props) {
 									</span>
 								</PostHeader>
 								<PostImg>
-									<Link to="/">
-										<img
-											src={data && Post.heroImage['url']}
-											alt={data && Post.title}
-										/>
-									</Link>
+									{/* <Link to="/"> */}
+									<img
+										src={data && Post.heroImage['url']}
+										alt={data && Post.title}
+										title={data && Post.title}
+									/>
+									{/* </Link> */}
 								</PostImg>
 								<PostEntry>
 									{/* <p>{data && Post.body}</p> */}

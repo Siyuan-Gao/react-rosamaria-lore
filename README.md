@@ -1,14 +1,31 @@
 # React-Rosamaria-Lore
 
-### Original Design
+## Fun Facts
 
--   [SoloPine: RoseMary](https://solopine.com/rosemary/)
+-   65+ Total components
+    -   30+ Are Styled Comonents
 
-### packages used
+### Packages used
 
 -   react
 -   react-dom
--   NextJs
+-   React Router Dom
+-   React Helmet
+-   Axios
+-   Moment
 -   Contentful
--   styled-components
--   react-slick
+-   Contentful Rich Text Renderer
+-   FontAwesome React Tools
+-   Styled-components
+-   React-Slick
+
+### Example DotENV
+
+Contentful Space ID
+Contentful API Token
+Contentful Preview Token
+Contentful Environment String
+
+### Original Design
+
+-   [SoloPine: RoseMary](https://solopine.com/rosemary/)

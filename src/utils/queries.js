@@ -195,39 +195,46 @@ export const queryAboutPage = `query{
   }
 }`;
 
+export const getAssetByID = (assetID) => `query{
+  asset(id: "${assetID}"){
+    url
+    title
+  }
+}`;
+
 //  FUNCTIONS
 export function categoriesCounter(blogPostCollection) {
-    let initalArray = [];
-    blogPostCollection.items.map((item) =>
-        initalArray.push(item.categories[0])
-    );
-    let counts = {};
-    initalArray.forEach((x) => {
-        counts[x] = (counts[x] || 0) + 1;
-    });
-    // returns object with categories and their counts
-    return counts;
+	let initalArray = [];
+	blogPostCollection.items.map((item) =>
+		initalArray.push(item.categories[0])
+	);
+	let counts = {};
+	initalArray.forEach((x) => {
+		counts[x] = (counts[x] || 0) + 1;
+	});
+	// returns object with categories and their counts
+	return counts;
 }
 
 export function uniquePostTags(blogPostCollection) {
-    let initalArray = [];
-    // add all values to initalArray
-    blogPostCollection.items.map((item, index) =>
-        item.tags.map((subItem) => initalArray.push(subItem))
-    );
-    // filter out duplicates
-    const tagArray = initalArray.filter(
-        (value, index) => initalArray.indexOf(value) === index
-    );
-    // returns array with unique values
-    return tagArray;
+	let initalArray = [];
+	// add all values to initalArray
+	blogPostCollection.items.map((item, index) =>
+		item.tags.map((subItem) => initalArray.push(subItem))
+	);
+	// filter out duplicates
+	const tagArray = initalArray.filter(
+		(value, index) => initalArray.indexOf(value) === index
+	);
+	// returns array with unique values
+	return tagArray;
 }
 
 export function userCameFromOutside(ogSlug, data) {
-    const { blogPostCollection } = data;
-    const postWeNeed = blogPostCollection.items.filter(
-        (item) => item.slug.toLowerCase() === ogSlug.toLowerCase()
-    );
+	const { blogPostCollection } = data;
+	const postWeNeed = blogPostCollection.items.filter(
+		(item) => item.slug.toLowerCase() === ogSlug.toLowerCase()
+	);
 
-    return postWeNeed[0];
+	return postWeNeed[0];
 }
