@@ -1,5 +1,4 @@
 import React from 'react';
-
 // local imports
 import DivMain from '../styled/DivMain';
 import SpGrid from '../styled/SpGridUL';

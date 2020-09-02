@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+
 // locals
 import FeatItem from '../styled/featuredItem/FeatItem';
 import FeatOverlay from '../styled/featuredItem/FeatOverlay';

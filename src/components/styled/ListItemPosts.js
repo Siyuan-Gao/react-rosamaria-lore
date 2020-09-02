@@ -2,13 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import LazyLoad from 'react-lazyload';
 
 export default function PostArticle({ content }) {
 	return (
 		<PARTICLE>
 			<PIMG>
 				<Link to={`/posts/${content.slug}`}>
-					<img src={content.heroImage.url} alt={content.slug} />
+					<LazyLoad>
+						<img src={content.heroImage.url} alt={content.slug} />
+					</LazyLoad>
 				</Link>
 			</PIMG>
 			<ListItem>

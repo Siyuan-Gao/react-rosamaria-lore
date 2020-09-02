@@ -1,53 +1,57 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
-import { Switch, Route } from "react-router-dom";
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { Switch, Route } from 'react-router-dom';
 
-import Home from "./pages";
-import About from "./pages/about-me";
-import Blog from "./pages/blog";
-import Projects from "./pages/projects";
-import Contanct from "./pages/contact";
-import DetailPost from "./pages/posts/slug";
+// LOCALS
+import Home from './pages';
+import About from './pages/about-me';
+import Blog from './pages/blog';
+import Projects from './pages/projects';
+import Contanct from './pages/contact';
+import DetailPost from './pages/posts/slug';
 
 const theme = {
-    colors: {
-        primary: "#0070f3",
-    },
-    mediaQ: {
-        Lg: `only screen and (min-width: 942px) and (max-width: 1170px)`,
-        Md: `only screen and (min-width: 768px) and (max-width: 960px)`,
-        Xs: `only screen and (max-width: 767px)`,
-        Sm: `only screen and (min-width: 480px) and (max-width: 768px)`,
-    },
+	colors: {
+		primary: '#0070f3',
+	},
+	mediaQ: {
+		Lg: `only screen and (min-width: 942px) and (max-width: 1170px)`,
+		Md: `only screen and (min-width: 768px) and (max-width: 960px)`,
+		Xs: `only screen and (max-width: 767px)`,
+		Sm: `only screen and (min-width: 480px) and (max-width: 768px)`,
+	},
 };
 function App() {
-    return (
-        <ThemeProvider theme={theme}>
-            <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route exact path="/about-me">
-                    <About />
-                </Route>
-                <Route exact path="/posts">
-                    <Blog />
-                </Route>
-                <Route path="/posts/:slug">
-                    <DetailPost />
-                </Route>
-                <Route exact path="/projects">
-                    <Projects />
-                </Route>
-                <Route exact path="/contact">
-                    <Contanct />
-                </Route>
-                <Route>
-                    <p>Error...</p>
-                </Route>
-            </Switch>
-        </ThemeProvider>
-    );
+	return (
+		<ThemeProvider theme={theme}>
+			<Switch>
+				<Route exact path="/">
+					<Home />
+				</Route>
+				<Route exact path="/about-me">
+					<About />
+				</Route>
+				<Route exact path="/posts">
+					<Blog />
+				</Route>
+				<Route exact path="/posts/page/:count">
+					<Blog />
+				</Route>
+				<Route path="/posts/:slug">
+					<DetailPost />
+				</Route>
+				<Route exact path="/projects">
+					<Projects />
+				</Route>
+				<Route exact path="/contact">
+					<Contanct />
+				</Route>
+				<Route>
+					<p>Error...</p>
+				</Route>
+			</Switch>
+		</ThemeProvider>
+	);
 }
 
 export default App;

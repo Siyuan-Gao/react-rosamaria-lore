@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import LazyLoad from 'react-lazyload';
 
 function GetEmbeddedImg({ assetID, width }) {
 	const [data, setData] = useState(null);
@@ -47,16 +48,20 @@ function GetEmbeddedImg({ assetID, width }) {
 	if (!data) return <p>Loading...</p>;
 	// console.log(data);
 	return (
-		<img
-			// ?w=${width}
-			src={`${data.url}`}
-			alt={data.title}
-			title={data.title}
-			style={{
-				maxWidth: '100%',
-				height: 'auto',
-			}}
-		/>
+		<>
+			<LazyLoad>
+				<img
+					// ?w=${width}
+					src={`${data.url}`}
+					alt={data.title}
+					title={data.title}
+					style={{
+						maxWidth: '100%',
+						height: 'auto',
+					}}
+				/>
+			</LazyLoad>
+		</>
 	);
 }
 export default GetEmbeddedImg;

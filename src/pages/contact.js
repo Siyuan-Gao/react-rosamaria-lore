@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import LazyLoad from 'react-lazyload';
 // local imports
 import Layout from '../layout';
 import Siderbar from '../components/homepage/Sidebar';
@@ -24,7 +25,9 @@ export default function Contact() {
 							</PostHeader>
 							<PostImg>
 								{/* <a href="#"> */}
-								<img src={contactImg} alt="contact" />
+								<LazyLoad>
+									<img src={contactImg} alt="contact" />
+								</LazyLoad>
 								{/* </a> */}
 							</PostImg>
 							<PostEntry>

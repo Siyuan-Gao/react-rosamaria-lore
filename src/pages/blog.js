@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // local imports
 import Layout from '../layout';
 import Sidebar from '../components/homepage/Sidebar';
@@ -7,10 +7,12 @@ import PostHeader from '../components/styled/PostHeader';
 import DivMain from '../components/styled/DivMain';
 // contenful Hook
 import useContentful from '../hooks/useContentful';
-import { queryAllPostsWithAuthors } from '../utils/queries';
+import { queryAllPosts } from '../utils/queries';
 
 export default function Blog() {
-	let { data, errors } = useContentful(queryAllPostsWithAuthors);
+	const [skip, setSkip] = useState(0);
+	const [pageLimit, setPageLimit] = useState(6);
+	let { data, errors } = useContentful(queryAllPosts(skip, pageLimit));
 
 	if (errors)
 		return (

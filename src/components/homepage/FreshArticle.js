@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import LazyLoad from 'react-lazyload';
+
 // local
 import ArticlePost from '../styled/ArticlePost';
 import FreshBody from '../posts/fresh-body';
@@ -47,10 +49,12 @@ function ArticleComponent({ article }) {
 						state: { postID: article.sys.id },
 					}}
 				>
-					<img
-						src={article && article.heroImage.url}
-						alt={article && article.title}
-					/>
+					<LazyLoad>
+						<img
+							src={article && article.heroImage.url}
+							alt={article && article.title}
+						/>
+					</LazyLoad>
 				</Link>
 			</PostImg>
 			<PostEntry>

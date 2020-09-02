@@ -15,14 +15,11 @@ function PromoArea() {
 	return (
 		<DivPromoArea className="p-slider">
 			<DivPromoItem image={img1} className="p-item">
-				{/* CHANGE URLS */}
-				{/* <Link to="/"> */}
 				<a href={links.TWITTER_LINK} className="promo-link">
 					{' '}
 				</a>
-				{/* </Link> */}
 				<div className="promo-overlay">
-					<h4>Follow @ Twitter</h4>
+					<h4>@Twitter</h4>
 				</div>
 			</DivPromoItem>
 			<DivPromoItem image={img2} className="p-item">

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import LazyLoad from 'react-lazyload';
+
 // local imports
 import GridBody from '../posts/grid-body'; // specific parsing
 import ArticlePost from '../styled/ArticlePost';
@@ -20,10 +22,12 @@ export default function GridArticle({ postInfo }) {
 						state: { postID: postInfo.sys.id },
 					}}
 				>
-					<img
-						src={postInfo && postInfo.heroImage.url}
-						alt={postInfo && postInfo.title}
-					/>
+					<LazyLoad>
+						<img
+							src={postInfo && postInfo.heroImage.url}
+							alt={postInfo && postInfo.title}
+						/>
+					</LazyLoad>
 				</Link>
 			</PostImg>
 			<PostHeader className="g">

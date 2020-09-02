@@ -1,7 +1,7 @@
 // GRAPHQL QUERIES
-export const queryAllPostsWithAuthors = `
+export const queryAllPosts = (skip, limit) => `
 query {
-  blogPostCollection {
+  blogPostCollection (skip: ${skip},limit: ${limit},){
     items {
       sys{
         id
