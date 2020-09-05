@@ -92,7 +92,7 @@ const PostCatSpan = styled.span`
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	border-bottom: 1px solid;
-	border-color: #c69f73;
+	border-color: ${(props) => props.theme.colors.main_color};
 	padding-bottom: 2px;
 	display: inline-block;
 	margin: 0 8px 7px 0;
@@ -101,7 +101,7 @@ const PostCatSpan = styled.span`
 const PostH2 = styled.h2`
 	a {
 		font-size: 22px;
-		color: #000;
+		color: ${(props) => props.theme.colors.link_color};
 		transition: 0.2s all;
 
 		&:hover {

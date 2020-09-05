@@ -4,9 +4,9 @@ const CatH2 = styled.h2`
 	margin-bottom: 14px;
 
 	p {
-		color: #000;
+		color: ${(props) => props.theme.colors.black_color};
 		font-size: 24px;
-		-o-transition: 0.2s;
+		transition: 0.2s;
 		-ms-transition: 0.2s;
 		-moz-transition: 0.2s;
 		-webkit-transition: 0.2s;

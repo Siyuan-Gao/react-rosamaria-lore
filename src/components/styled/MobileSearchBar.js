@@ -22,18 +22,15 @@ const MobileSearch = styled.div`
 		outline: none;
 	}
 
-	/* @media ${({ theme }) => theme.mediaQ.Md} {
-    display: block;
-}
-@media ${({
-		theme,
-	}) => theme.mediaQ.Xs} {
-    display: block;
-}
-@media ${({ theme }) =>
-		theme.mediaQ.Sm} {
-    display: block;
-} */
+	@media ${({ theme }) => theme.mediaQ.Md} {
+		display: block;
+	}
+	@media ${({ theme }) => theme.mediaQ.Xs} {
+		display: block;
+	}
+	@media ${({ theme }) => theme.mediaQ.Sm} {
+		display: block;
+	}
 `;
 
 export default MobileSearch;

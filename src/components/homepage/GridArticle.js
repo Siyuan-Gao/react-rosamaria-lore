@@ -43,7 +43,7 @@ export default function GridArticle({ postInfo }) {
 							state: { postID: postInfo.sys.id },
 						}}
 					>
-						<p href="#">{postInfo && postInfo.title}</p>
+						<p>{postInfo && postInfo.title}</p>
 					</Link>
 				</h2>
 			</PostHeader>

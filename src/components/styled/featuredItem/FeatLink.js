@@ -5,7 +5,7 @@ const CatA = styled.p`
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	border-bottom: 1px solid;
-	border-color: #c69f73;
+	border-color: ${(props) => props.theme.colors.main_color};
 	padding-bottom: 2px;
 	display: inline-block;
 	margin: 0 4px 12px;

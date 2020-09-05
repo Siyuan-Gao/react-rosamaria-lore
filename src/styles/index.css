@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 :root {
-    --body-bg: #fff;
-    --font-color: #424242;
-    --main-color: #c69f73;
-    --head-borderBottom: #eee;
-    --fontFamily-Body: 'Lato', sans-serif;
-    --fontFamily-Header: 'Playfair Display';
+	--body-bg: #fff;
+	--font-color: #111111;
+	/* --main-color: #7c40c7; */
+	--main-color: #7c40c7;
+	--link-color: #7c40c7;
+	--active-link-color: #7c40c7;
+	--black-color: #0e1111;
+	--white-color: #fff;
+	--date-color: #888;
+	--head-borderBottom: #eee;
+	--fontFamily-Body: 'Lato', sans-serif;
+	--fontFamily-Header: 'Playfair Display';
 }
 
 *,
@@ -34,30 +40,30 @@ p,
 blockquote,
 th,
 td {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 html {
-    overflow-x: hidden;
+	overflow-x: hidden;
 }
 body {
-    background: var(--body-bg);
-    font-family: var(--fontFamily-Body);
-    color: var(--font-color);
-    font-size: 14px;
+	background: var(--body-bg);
+	font-family: var(--fontFamily-Body);
+	color: var(--font-color) !important;
+	font-size: 14px;
 }
 
 p {
-    line-height: 24px;
+	line-height: 24px;
 }
 
 a {
-    text-decoration: none;
-    color: var(--main-color);
+	text-decoration: none;
+	color: var(--link-color);
 }
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 h1,
@@ -66,19 +72,19 @@ h3,
 h4,
 h5,
 h6 {
-    /* font-size: 100%; */
-    font-weight: 400;
-    font-family: var(--fontFamily-Header);
+	/* font-size: 100%; */
+	font-weight: 400;
+	font-family: var(--fontFamily-Header);
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 fieldset,
 img {
-    border: 0;
+	border: 0;
 }
 
 address,
@@ -90,123 +96,123 @@ em,
 strong,
 th,
 var {
-    font-style: normal;
-    font-weight: 400;
+	font-style: normal;
+	font-weight: 400;
 }
 
 ol,
 ul,
 li {
-    list-style: none;
+	list-style: none;
 }
 
 caption,
 th {
-    text-align: left;
+	text-align: left;
 }
 
 q:before,
 q:after {
-    content: '';
+	content: '';
 }
 
 strong {
-    font-weight: 700;
+	font-weight: 700;
 }
 
 em {
-    font-style: italic;
+	font-style: italic;
 }
 
 a img {
-    border: none;
+	border: none;
 }
 
 strong,
 b,
 strong *,
 b * {
-    font-weight: 700;
+	font-weight: 700;
 }
 
 em,
 i,
 em *,
 i * {
-    font-style: italic;
+	font-style: italic;
 }
 
 *,
 *:before,
 *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .home #header {
-    margin-bottom: 0;
-    border-bottom: none;
+	margin-bottom: 0;
+	border-bottom: none;
 }
 
 #header {
-    padding-top: 51px;
-    margin-bottom: 60px;
-    border-bottom: 1px solid var(--header-borderBottom);
+	padding-top: 51px;
+	margin-bottom: 60px;
+	border-bottom: 1px solid var(--header-borderBottom);
 }
 
 .container {
-    margin: 0 auto;
-    width: 1080px;
+	margin: 0 auto;
+	width: 1080px;
 }
 
 .fa {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .p-slider {
-    margin-top: -20px;
+	margin-top: -20px;
 }
 
 .promo-link {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 999999;
-    display: block;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	display: block;
 }
 
 .p-item:last-child {
-    margin-right: 0;
+	margin-right: 0;
 }
 
 #content {
-    margin-bottom: 80px;
+	margin-bottom: 80px;
 }
 #content:after {
-    content: '';
-    display: table;
-    clear: both;
+	content: '';
+	display: table;
+	clear: both;
 }
 #main {
-    width: 760px;
-    float: left;
+	width: 760px;
+	float: left;
 }
 #sidebar {
-    width: 260px;
-    float: right;
+	width: 260px;
+	float: right;
 }
 .widget {
-    margin-bottom: 38px;
+	margin-bottom: 38px;
 }
 address,
 caption,
@@ -217,76 +223,76 @@ em,
 strong,
 th,
 var {
-    font-style: normal;
-    font-weight: 400;
+	font-style: normal;
+	font-weight: 400;
 }
 .active {
-    color: var(--main-color) !important;
-    font-weight: 700 !important;
+	color: var(--active-link-color) !important;
+	font-weight: 700 !important;
 }
 
 #n-t {
-    margin-top: 7px;
-    margin: 0;
-    float: left;
+	margin-top: 7px;
+	margin: 0;
+	float: left;
 }
 
 /* L */
 @media only screen and (min-width: 942px) and (max-width: 1170px) {
-    .container {
-        width: 940px;
-    }
-    #main {
-        width: 650px;
-    }
+	.container {
+		width: 940px;
+	}
+	#main {
+		width: 650px;
+	}
 
-    .promo-item {
-        width: 293px;
-        height: 172px;
-    }
+	.promo-item {
+		width: 293px;
+		height: 172px;
+	}
 }
 /* M */
 @media only screen and (min-width: 768px) and (max-width: 960px) {
-    .container {
-        width: 726px;
-    }
+	.container {
+		width: 726px;
+	}
 
-    #main {
-        width: 100%;
-    }
+	#main {
+		width: 100%;
+	}
 
-    #sidebar {
-        width: 480px;
-        margin: 0 auto;
-        float: none;
-        overflow: hidden;
-    }
+	#sidebar {
+		width: 480px;
+		margin: 0 auto;
+		float: none;
+		overflow: hidden;
+	}
 }
 
 /* XS */
 @media only screen and (max-width: 767px) {
-    .container {
-        width: 300px;
-    }
-    #content {
-        margin-bottom: 80px;
-    }
-    #main {
-        width: 100%;
-    }
-    #sidebar {
-        width: 100%;
-    }
-    .promo-item {
-        width: 100%;
-        height: 176px;
-        margin-bottom: 30px;
-    }
+	.container {
+		width: 300px;
+	}
+	#content {
+		margin-bottom: 80px;
+	}
+	#main {
+		width: 100%;
+	}
+	#sidebar {
+		width: 100%;
+	}
+	.promo-item {
+		width: 100%;
+		height: 176px;
+		margin-bottom: 30px;
+	}
 }
 
 /* S */
 @media only screen and (min-width: 480px) and (max-width: 768px) {
-    .container {
-        width: 480px;
-    }
+	.container {
+		width: 480px;
+	}
 }

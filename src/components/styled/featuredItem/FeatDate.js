@@ -5,7 +5,7 @@ const SpanDate = styled.span`
 	margin-bottom: 28px;
 	font-size: 11px;
 	font-style: italic;
-	color: #888;
+	color: ${(props) => props.theme.colors.date_color};
 	@media ${({ theme }) => theme.mediaQ.Xs} {
 		display: none;
 		margin-bottom: 0;

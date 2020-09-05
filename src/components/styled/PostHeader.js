@@ -5,13 +5,10 @@ const PostHeader = styled.div`
 	text-align: center;
 
 	h1 {
-		color: #000;
+		color: ${(props) => props.theme.colors.black_color};
 		font-size: 26px;
 		margin-bottom: 10px;
-		-o-transition: 0.2s;
-		-ms-transition: 0.2s;
-		-moz-transition: 0.2s;
-		-webkit-transition: 0.2s;
+		transition: 0.2s;
 	}
 
 	.cat p {
@@ -19,7 +16,7 @@ const PostHeader = styled.div`
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		border-bottom: 1px solid;
-		border-color: #c69f73;
+		border-color: ${(props) => props.theme.colors.main_color};
 		padding-bottom: 2px;
 		display: inline-block;
 		margin: 0 4px 12px;
@@ -30,7 +27,7 @@ const PostHeader = styled.div`
 	.published {
 		font-size: 11px;
 		font-style: italic;
-		color: #888;
+		color: ${(props) => props.theme.colors.black_color};
 	}
 
 	&.fresh {
@@ -39,7 +36,7 @@ const PostHeader = styled.div`
 			text-transform: uppercase;
 			letter-spacing: 2px;
 			border-bottom: 1px solid;
-			border-color: #c69f73;
+			border-color: ${(props) => props.theme.colors.main_color};
 			padding-bottom: 2px;
 			display: inline-block;
 			margin: 0 4px 12px;
@@ -49,9 +46,9 @@ const PostHeader = styled.div`
 			margin-bottom: 10px;
 
 			p {
-				color: #000;
+				color: ${(props) => props.theme.colors.black_color};
 				font-size: 26px;
-				-o-transition: 0.2s;
+				transition: 0.2s;
 				-ms-transition: 0.2s;
 				-moz-transition: 0.2s;
 				-webkit-transition: 0.2s;
@@ -72,7 +69,7 @@ const PostHeader = styled.div`
 			text-transform: uppercase;
 			letter-spacing: 2px;
 			border-bottom: 1px solid;
-			border-color: #c69f73;
+			border-color: ${(props) => props.theme.colors.main_color};
 			padding-bottom: 2px;
 			display: inline-block;
 			margin: 0 4px 8px;
@@ -82,13 +79,10 @@ const PostHeader = styled.div`
 			margin-bottom: 10px;
 
 			p {
-				color: #000;
+				color: ${(props) => props.theme.colors.black_color};
 				font-size: 22px;
 				font-weight: 400;
-				-o-transition: 0.2s;
-				-ms-transition: 0.2s;
-				-moz-transition: 0.2s;
-				-webkit-transition: 0.2s;
+				transition: 0.2s;
 			}
 
 			p:hover {

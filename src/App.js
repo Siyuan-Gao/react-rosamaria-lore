@@ -10,9 +10,17 @@ import Projects from './pages/projects';
 import Contanct from './pages/contact';
 import DetailPost from './pages/posts/slug';
 
-const theme = {
+export const theme = {
 	colors: {
-		primary: '#0070f3',
+		main_color: 'var(--main-color)',
+		link_color: 'var(--link-color)',
+		active_color: 'var(--active-link-color)',
+		link_hover_color: 'var(--active-link-color)',
+		font_color: 'var(--font-color)',
+		black_color: 'var(--black-color)',
+		white_color: 'var(--white-color)',
+		date_color: 'var(--date-color)',
+		// ${props => props.theme.colors.black_color};
 	},
 	mediaQ: {
 		Lg: `only screen and (min-width: 942px) and (max-width: 1170px)`,

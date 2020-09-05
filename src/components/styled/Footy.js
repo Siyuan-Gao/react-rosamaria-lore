@@ -7,7 +7,7 @@ const Footy = styled.div`
 	p {
 		font-style: italic;
 		font-size: 12px;
-		color: #888;
+		color: ${(props) => props.theme.colors.date_color};
 	}
 
 	.left {

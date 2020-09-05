@@ -29,7 +29,7 @@ const DivPromoItem = styled.div`
 			font-size: 11px;
 			text-transform: uppercase;
 			letter-spacing: 2px;
-			background: #fff;
+			background: ${(props) => props.theme.colors.white_color};
 			display: inline-block;
 			max-width: 65%;
 			font-family: 'Lato', sans-serif;

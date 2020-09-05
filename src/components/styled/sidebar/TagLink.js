@@ -11,7 +11,7 @@ const TagLink = styled.span`
 		margin-right: 5px;
 		margin-bottom: 8px;
 		display: inline-block;
-		-o-transition: 0.3s;
+		transition: 0.3s;
 		-ms-transition: 0.3s;
 		-moz-transition: 0.3s;
 		-webkit-transition: 0.3s;

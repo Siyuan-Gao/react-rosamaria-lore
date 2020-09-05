@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const NavM = styled.div`
 	display: none;
 	font-size: 16px;
-	background: #fff;
+	background: ${(props) => props.theme.colors.white_color};
 	padding: 6px;
 
 	:before {
@@ -32,32 +32,32 @@ const NavM = styled.div`
 		-webkit-border-radius: 4px;
 		-moz-border-radius: 4px;
 		border-radius: 4px;
-		color: #000;
+		color: ${(props) => props.theme.colors.black_color};
 		font-size: 20px;
 
 		.mt {
 			display: block;
 			line-height: 1.188em;
 			float: left;
-			color: #fff;
+			color: ${(props) => props.theme.colors.white_color};
 			font-weight: 700;
-			text-shadow: 0 1px 3px #000;
+			text-shadow: 0 1px 3px ${(props) => props.theme.colors.black_color};
 		}
 	}
 
 	@media ${({ theme }) => theme.mediaQ.Md} {
 		display: block !important;
-		color: #000;
+		color: ${(props) => props.theme.colors.black_color};
 		/* background: red; */
 	}
 	@media ${({ theme }) => theme.mediaQ.Sm} {
 		display: block !important;
-		color: #000;
+		color: ${(props) => props.theme.colors.black_color};
 		/* background: green; */
 	}
 	@media ${({ theme }) => theme.mediaQ.Xs} {
 		display: block !important;
-		color: #000;
+		color: ${(props) => props.theme.colors.black_color};
 		/* background: blue; */
 	}
 `;

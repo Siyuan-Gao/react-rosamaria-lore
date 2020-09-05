@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const SlickUL = styled.ul`
 	clear: both;
-	color: #fff;
+	color: ${(props) => props.theme.colors.white_color};
 	margin: 0;
 	padding: 0;
 	background: #f6f6f6;
@@ -19,7 +19,7 @@ const SlickUL = styled.ul`
 			padding: 5px 10px;
 			margin: 2px 5px;
 			text-decoration: none;
-			color: #000;
+			color: ${(props) => props.theme.colors.black_color};
 			font-size: 12px;
 			font-weight: 400;
 			letter-spacing: 1px;

@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 const WidgetTitle = styled.h4`
 	border: 1px solid;
-	border-color: #c69f73;
+	border-color: ${(props) => props.theme.colors.main_color};
 	font-size: 10px;
-	color: #000;
+	color: ${(props) => props.theme.colors.black_color};
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-family: 'Lato';

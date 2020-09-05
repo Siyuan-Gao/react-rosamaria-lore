@@ -28,25 +28,25 @@ const PostEntry = styled.div`
 			font-size: 10px;
 			text-transform: uppercase;
 			letter-spacing: 2px;
-			color: #000;
-			background: #fff;
+			color: ${(props) => props.theme.colors.black_color};
+			background: ${(props) => props.theme.colors.white_color};
 			font-weight: 700;
 			display: inline-block;
 			margin-top: 16px;
 			padding: 9px 24px 10px;
 			border: 1px solid;
-			border-color: #c69f73;
-			-o-transition: 0.2s;
+			border-color: ${(props) => props.theme.colors.main_color};
+			transition: 0.2s;
 			-ms-transition: 0.2s;
 			-moz-transition: 0.2s;
 			-webkit-transition: 0.2s;
 			line-height: 24px;
 		}
 		.more-button:hover {
-			background: #c69f73;
-			color: #fff;
+			background: ${(props) => props.theme.colors.main_color};
+			color: ${(props) => props.theme.colors.white_color};
 			border: 1px solid;
-			border-color: #c69f73;
+			border-color: ${(props) => props.theme.colors.main_color};
 		}
 	}
 

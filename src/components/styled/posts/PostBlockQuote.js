@@ -10,7 +10,7 @@ const PostBlockQuote = styled.blockquote`
 		font-size: 20px;
 		line-height: 30px;
 		font-style: italic;
-		color: #000;
+		color: ${(props) => props.theme.font_color};
 		position: relative;
 		z-index: 2 !important;
 	}

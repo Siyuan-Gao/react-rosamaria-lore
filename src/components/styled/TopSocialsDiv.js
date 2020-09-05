@@ -6,13 +6,13 @@ const SocialsDiv = styled.div`
 	top: 0;
 
 	a {
-		color: #000;
+		color: ${(props) => props.theme.colors.black_color};
 		font-size: 13px;
 		margin-left: 10px;
 		line-height: 51px;
 	}
 	a:hover {
-		color: #c69f73;
+		color: ${(props) => props.theme.colors.link_hover_color};
 	}
 	.nosearch {
 		right: 0;

@@ -10,7 +10,7 @@ const SocialWidget = styled.div`
 		margin-right: 0;
 	}
 	a:hover > i {
-		color: #c69f73;
+		color: ${(props) => props.theme.colors.main_color};
 	}
 
 	a i {
