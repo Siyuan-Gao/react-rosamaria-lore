@@ -25,7 +25,3 @@ Contentful Space ID
 Contentful API Token
 Contentful Preview Token
 Contentful Environment String
-
-### Original Design
-
--   [SoloPine: RoseMary](https://solopine.com/rosemary/)
